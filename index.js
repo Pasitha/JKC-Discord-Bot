@@ -1,3 +1,4 @@
+// invite bot link : https://discord.com/oauth2/authorize?client_id=742258552550195321&scope=bot
 // import Discord, rss-parser
 const Discord = require('discord.js');
 const request = new (require("rss-parser"));
@@ -9,8 +10,8 @@ const client = new Discord.Client();
 
 // array of youtube channal id's each member JKC team
 const JKC_youtube_id = [
-	'', // BossNiti
-	'', // PirorohTH
+	'UCf5WOYccfrhSVpeJLmc8DoQ', // BossNiti
+	'UCawiV5orP_u3XWEg95SRDmA', // PirorohTH
 	'UCI-s7_5Re6h-xoJ-KJDcxCA', // Arenaiz6
 	'UCvAD35ExopO_imh2hG8joVA', // truefaster
 	'UCD6F39uqBBM2LfXGb6aD8sQ', // FreshZ
@@ -22,12 +23,12 @@ const JKC_youtube_id = [
 	'UC1VzAZISuwQ-lwb-oHWhvmQ', // GucciGuy
 	'UCfs20_RtMU90py7DYbbnjPA', // RKGz
 	'UCoZGzmRcvXQt4Mv3LS_49Bg', // SiMonZWolf
-	'', // SherlockCs
+	'UCzT0URjXQqYM1XaT3sHbcVA', // SherlockCs
 	'UCJtNCvCTLX8Z-K4dgcOnM1w', // SoontornG
 	'UC0Ihen7U7rxWcgvCC9_smXA', // First PaYa
 	'UC8oaVGY5t28NEv-gwht0wig', // PSYCHOrnz
 	'UCMHGJtaJ2EFHTXB8E-_UX1Q', // kin zaza
-	'', // Hasaki Ch. | ハサキ レイ
+	'UCKTLYtDr2oVIhVKb9KZbt1Q', // Hasaki Ch. | ハサキ レイ
 	'UCuKHNZ2eCMJbRzd8cZH6V8Q', // Lonely Crown
 	'UCe_dyRiP9XVRxPjWNBBiQBw', // Pooh37
 	'UCOA81B6mrIGq-iABJrXqd7w', // ItsSakata_
