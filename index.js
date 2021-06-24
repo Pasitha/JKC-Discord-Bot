@@ -241,4 +241,5 @@ client.on('message', message=> {
 });
 
 // Login Bot with token
-client.login(/*Bot token*/);
+client.login("%/*Bot token*/%");
+// Remove %/*Bot token*/% and insert your discord bot token here
