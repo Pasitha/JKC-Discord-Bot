@@ -1,0 +1,29 @@
+{
+  "name": "jkc-discord-bot",
+  "version": "0.0.1",
+  "description": "Discord bot for Jukucrush's official discord server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pasitha/JKC-Discord-Bot.git"
+  },
+  "author": "Pasitha & XyZerKunG",
+  "authors": [
+    "XyZerKunG",
+    "Pasitha"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pasitha/JKC-Discord-Bot/issues"
+  },
+  "homepage": "https://github.com/Pasitha/JKC-Discord-Bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "json-stringify-pretty-compact": "^3.0.0",
+    "rss-parser": "^3.12.0"
+  }
+}
