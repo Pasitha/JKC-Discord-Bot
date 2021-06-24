@@ -1,4 +1,3 @@
-// invite bot link : https://discord.com/oauth2/authorize?client_id=742258552550195321&scope=bot
 // import Discord, rss-parser
 const Discord = require('discord.js');
 const request = new (require("rss-parser"));
