@@ -11,7 +11,6 @@ const client = new Discord.Client();
 const JKC_youtube_id = [
 	'UCf5WOYccfrhSVpeJLmc8DoQ', // BossNiti
 	'UCawiV5orP_u3XWEg95SRDmA', // PirorohTH
-	'UCI-s7_5Re6h-xoJ-KJDcxCA', // Arenaiz6
 	'UCvAD35ExopO_imh2hG8joVA', // truefaster
 	'UCD6F39uqBBM2LfXGb6aD8sQ', // FreshZ
 	'UCwAbFRVXeZ9EE2-1DVqJmew', // PAZPAT
@@ -236,6 +235,16 @@ client.on('message', message=> {
 
 			// send embed to chat channal 
 			message.channel.send(info_embed);
+		break;
+		case 'h': case 'jkc':
+		case 'help':
+			let help_embed = new Discord.MessageEmbed().setColor("#FFD157")
+				.setTitle("--สวัสดีครับ น้องจุ๊ก เอง--")
+				.addField("📰สามารถติดตาม Jukucrush Team ได้ที่ Facebook", '[Facebook - Jukucrush Team](https://www.facebook.com/JukucrushTeam?ref=hl)')
+				.addField("📌หรือที่ youtube", '[Youtube - Jukucrush Team](https://www.youtube.com/channel/UC-lNawOSpzmBSO-IqKImcfw)')
+				.addField("👨🏻‍💻สามารถตรวจสอบคำสั่งและอัพเดตทั้งหมดได้ที่", '[Github JKC - Discord Bot](https://github.com/Pasitha/JKC-Discord-Bot)');
+			// send embed to chat channal 
+			message.channel.send(help_embed);
 		break;
 	}
 });
