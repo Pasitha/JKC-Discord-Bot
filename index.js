@@ -67,9 +67,9 @@ setInterval(() => {
 	if (today.getHours() != 0) return ;
 	
 	// get all member birthday
-	for (let index in birthday) {
+	for (let i = 0; i < jkc_json_file.member.length; i++) {
 		// check if birthday is up to date
-		if (birthday[index].includes((today.getMonth()+1)+'-'+today.getDate())) {
+		if (jkc_json_file.member[i].birthDay.includes((today.getMonth()+1)+'-'+today.getDate())) {
 			
 			// specify channel to notify
 			let channel = client.channels.cache.get("552889042878857227");
