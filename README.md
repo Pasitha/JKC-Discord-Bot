@@ -33,7 +33,7 @@ Discord bot for <b>Jukucrush's official discord server</b>
 
 ## Feature (command)
 1. __Youtube notification__ check feed of youtube channel that defined in [jkc.json](https://github.com/Pasitha/JKC-Discord-Bot/blob/main/index.js#L11-L35 "array youtube channels id ") whether the channel(s) have updated video, live stream, etc. or not
-2. __Birth day notification__ 
+2. __Birth day notification__ for checking who's birthday today is. Birth day defined in [jkc.json](https://github.com/Pasitha/JKC-Discord-Bot/blob/b1918d5e10470a529fe3542f6b2c80b588c30bcf/jkc.json#L4)
 3. __random number__ random one number
 	- ```$random``` randomize a number from __1 to 100__
 	- ```$random some_number``` randomize a number from __1 to some_number__
