@@ -22,8 +22,11 @@
   },
   "homepage": "https://github.com/Pasitha/JKC-Discord-Bot#readme",
   "dependencies": {
-    "discord.js": "^12.5.3",
+    "discord.js": "^12.4.1",
+    "discord.js-buttons": "^1.0.0",
     "json-stringify-pretty-compact": "^3.0.0",
-    "rss-parser": "^3.12.0"
+    "request": "^2.88.2",
+    "rss-parser": "^3.12.0",
+    "youtube-notification": "^1.1.0"
   }
 }
