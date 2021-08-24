@@ -10,7 +10,7 @@ module.exports = {
         // if didn't have a third argument(choice of poll) then sent message back
         else if(!args[3]) return message.channel.send("รบกวนช่วยบอก Choiceของpollนี้หน่อยค่ะ");
         // if user has inout many argument of choice then sent message back
-        else if(args[13]) return message.channel.send("ต้องขอประทานอภัยด้วยนะค่ะ choiceเยอะกว่า10ผมไม่รองรับค่ะ ต้องขออภัยจริง ๆ ค่ะ");
+        else if(args[13]) return message.channel.send("ต้องขอประทานอภัยด้วยนะค่ะ choiceเยอะกว่า10หนูไม่รองรับค่ะ ต้องขออภัยจริง ๆ ค่ะ");
 
         // Emoji list number from 1 - 10
         const defEmojiList = [
