@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-function loadCommands(client) {
+module.exports = client => {
     fs.readdir('commands/', (err, files) => {
 
         if (err) console.log(err);
@@ -18,8 +18,4 @@ function loadCommands(client) {
             });
         });
     });
-}
-
-module.exports = {
-    loadCommands
 }
