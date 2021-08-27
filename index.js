@@ -22,9 +22,10 @@ const client = new Discord.Client({
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 const config = require('./settings.json');
-const { loadCommands } = require('./utils/loadCommands');
+
 require('./utils/loadEvents')(client);
+require('./utils/loadCommands')(client);
 
+require('./utils/yt-birthdayUpdate')(client);
 
-loadCommands(client);
 client.login(config.token);
