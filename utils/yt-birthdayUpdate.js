@@ -19,7 +19,7 @@ module.exports = client => {
 	
 						if (channel) {
 							let persuasion = ["เฮ้ทุกคนคะ !!! ช่อง", "ทุกคนนคะหนูจะบอกว่า ช่อง", "ง่าาาาาทุกคนนนนน ช่อง"];
-							channel.send(`${persuasion[Math.floor((Math.random() * 3)) + 1]} **${data.items[0].author}** มีอัพเดตแล้วไปดูกันเร็ว!!! \n${data.items[0].link}`);
+							channel.send(`${persuasion[Math.floor((Math.random() * 2))]} **${data.items[0].author}** มีอัพเดตแล้วไปดูกันเร็ว!!! \n${data.items[0].link}`);
 						}
 	
 						for (let j = 0; j < 3; j++) {
