@@ -2,7 +2,7 @@ const config = require('../settings.json')
 const { MessageEmbed } = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
-    let helpEmbed = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL()).setURL('https://github.com/opecgame/JKC-Discord-Bot')
+    let helpEmbed = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL()).setURL('https://github.com/Pasitha/JKC-Discord-Bot')
         .setTitle('คำสั่งทั้งหมดของ JKC\'s Discord Bot').setDescription('ก่อนใช้ทุกคำสั่งใช้ให้พิมพ์นำหน้าด้วย \`$\` แล้วตามด้วยชื่อคำสั่งได้เลย')
         .addFields(
             { name: ' - \`$info\`', value: 'ใช้สำหรับบอกข้อมูลต่าง ๆ ของผู้ใช้โดยสามารถใช้ได้โดย \`$info @ผู้ใช้\`' },
