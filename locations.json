@@ -4,7 +4,7 @@
             "nether" : [-7, 115, 15],
             "overworld" : [-77, 69, 133]
         },
-        "pictureName" : " "
+        "pictureName" : "spawn.png"
     },
     "shoppingZone" : {
         "get_position" : {
