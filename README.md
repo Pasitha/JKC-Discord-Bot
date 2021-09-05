@@ -53,6 +53,8 @@ Discord bot for <b>Jukucrush's official discord server</b>
 	- ```$random some_number another_number``` randomize a number from __some_number to another_number__
 7. __poll__ create a poll question and vote with reaction button
 	- ```$vote question description choice1 choice2 choice3 ... choice10``` jkc-bot will create embedded poll and clickable react message for choosing options
+8. __where is__ It is a command used to find out who is at which coordinates in the JKC-Jr.5 server
+	- ```$whereis locations_name``` jkc-bot will create embedded for telling the coordinates of that place
 
 ## Notification Feature
 1. __Youtube notification__ check feed of youtube channel that defined in [jkc.json](https://github.com/Pasitha/JKC-Discord-Bot/blob/main/index.js#L11-L35 "array youtube channels id ") whether the channel(s) have updated video, live stream, etc. or not
