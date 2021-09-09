@@ -1,7 +1,7 @@
 const config = require('../settings.json')
-const { MessageEmbed, MessageAttachment } = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = (client, message, args) => {
     function editDistance(s1, s2) {
         s1 = s1.toLowerCase();
         s2 = s2.toLowerCase();
@@ -45,34 +45,44 @@ module.exports.run = async (client, message, args) => {
     
         return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
     }
+
+    function setPositionEmbed(position) {
+        return `\`x : ${position[0]}\`\n\`y : ${position[1]}\`\n\`z : ${position[2]}\``;
+    }
     
     const position = require('../locations.json');
     const key = Object.keys(position);
     
-    function setPositionEmbed(position) {
-        return `\`x : ${position[0]}\`\n\`y : ${position[1]}\`\n\`z : ${position[2]}\``;
-    }
+    const listEmbed = new MessageEmbed()
+            .setColor("#FFD157")
+            .setThumbnail("https://triam.ddns.net/picture/Jukucrush_logo.png")
+            .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL())
 
-    for (const elementKey of key) {
-        if (!args[0]) {
+    if (!args[0])  {
+        listEmbed.setTitle("สถานที่มีที่ไหนบ้าง?");
+        locationString = ``;
 
+        for (const locations of key) 
+            locationString += `\`${locations}\`\n`;
+        
+        listEmbed.addField("Location" ,`${locationString}\n`);
+
+        return message.channel.send({ embeds: [listEmbed] });
+    } else {
+        for (const elementKey of key) {
+            if (similarity(args[0].toLowerCase(), elementKey) > 0.75) {
+
+                return message.channel.send({
+                    embeds : [listEmbed.setTitle(elementKey.toString().toUpperCase())
+                        .addFields(
+                            {name : "Nether Link : ", value : setPositionEmbed(position[elementKey].get_position.nether)},
+                            {name : "overworld : ", value : setPositionEmbed(position[elementKey].get_position.overworld)}
+                        )
+                        .setImage(`https://github.com/Pasitha/JKC-Discord-Bot/raw/main/picture/jkc-jr5/${position[elementKey].pictureName}`)
+                    ]});
+            }
         }
-
-        if (similarity(args[0].toLowerCase(), elementKey) > 0.5) {
-
-            const attachment = new MessageAttachment(`./picture/jkc-jr5/${position[elementKey].pictureName}`, position[elementKey].pictureName);
-            message.channel.send({
-                embeds : [new MessageEmbed().setTitle(elementKey.toString().toUpperCase())
-                    .addFields(
-                        {name : "Nether Link : ", value : setPositionEmbed(position[elementKey].get_position.nether)},
-                        {name : "overworld : ", value : setPositionEmbed(position[elementKey].get_position.overworld)}
-                    ).setColor("#FFD157")
-                    .setThumbnail("https://triam.ddns.net/picture/Jukucrush_logo.png")
-                    .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL())
-                ]
-                , files: [attachment] });
-        }
-    }
+    }   
 }
 
 module.exports.config = {
