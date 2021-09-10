@@ -26,11 +26,10 @@ module.exports.run = async (client, message, args) => {
 
         const JKC = require('../jkc.json');
         const randomMember = Math.floor(Math.random() * JKC.member.length);
-        var randomRecentClip = JKC.member[randomMember].youtube.lastVideoUpdate[Math.floor(Math.random() * 3)];
+        let randomRecentClip = JKC.member[randomMember].youtube.lastVideoUpdate[Math.floor(Math.random() * 3)];
 
         while (!randomRecentClip)
             randomRecentClip = JKC.member[randomMember].youtube.lastVideoUpdate[Math.floor(Math.random() * 3)];
-
 
         const recentClipEmbed = new MessageEmbed()
             .setThumbnail('https://github.com/Pasitha/JKC-Discord-Bot/raw/main/picture/jkc-logo/jkc-logo.png').setColor("#FFD157")
