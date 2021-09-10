@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
     
             message.channel.send({ content: `${args[0]} Skin`, files: [`https://mc-heads.net/player/${identifier}.png`, `https://mc-heads.net/skin/${identifier}.png`,] });
         } catch {
-            message.channel.send({ embeds: [new MessageEmbed().setAuthor(`หนูไม่พบผู้เล่นชื่อ *${args[1]}* เลยนะคะ`).setColor('#ff0000')] });
+            message.channel.send({ embeds: [new MessageEmbed().setAuthor(`หนูไม่พบผู้เล่นชื่อ *${args[0]}* เลยนะคะ`).setColor('#ff0000')] });
         }
     });
 }
