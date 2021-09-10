@@ -41,7 +41,8 @@ Discord bot for <b>Jukucrush's official discord server</b>
 2. __user information__ user information appears once the user types this command
 	- ```$info @user``` user information will be embedded by jkc-bot
 3. __jkc__ want to get some jukucrush infomation, type this command
-	- ```$help``` jkc-bot will create embedded help infomation
+	- ```$jkc``` jkc-bot will create embedded about jkc infomation
+	- ```$jkc ดูไรดี``` jkc-bot will randomize a video form jkc team
 4. __minecraft skin__ get your minecraft skin
     - ```$mcskin minecraft_name``` jkc-bot will send minecraft skin of player back to the channel
     - ```$mchead minecraft_name``` jkc-bot will send minecraft head of player back to the channel
