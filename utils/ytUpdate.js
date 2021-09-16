@@ -18,8 +18,8 @@ module.exports = client => {
 						let channel = client.channels.cache.get("438885368436359168");
 	
 						if (channel) {
-							let persuasion = ["เฮ้ทุกคนคะ !!! ช่อง", "ทุกคนนคะหนูจะบอกว่า ช่อง", "ง่าาาาาทุกคนนนนน ช่อง"];
-							channel.send(`${persuasion[Math.floor((Math.random() * 2))]} **${data.items[0].author}** มีอัพเดตแล้วไปดูกันเร็ว!!! \n${data.items[0].link}`);
+							let persuasion = ["เฮ้ทุกคนคะ !!!", "ทุกคนนคะหนูจะบอกว่า", "ง่าาาาาทุกคนนนนน", ""];
+							channel.send(`${persuasion[Math.floor((Math.random() * 2))]} ช่อง **${data.items[0].author}** มีอัพเดตแล้วไปดูกันเร็ว!!! \n${data.items[0].link}`);
 						}
 	
 						for (let j = 0; j < 3; j++) {
@@ -31,21 +31,6 @@ module.exports = client => {
 						if (err) throw err;
 					});
 				}).catch(error => console.log(error));
-			}
-		}
-	
-		var today = new Date();
-	
-		if (today.getHours() != 0) return ;
-		
-		for (let i = 0; i < jkc_json_file.member.length; i++) {
-			if (jkc_json_file.member[i].birthDay.includes((today.getMonth()+1)+'-'+today.getDate())) {
-				
-				let channel = client.channels.cache.get("552889042878857227");
-	
-				if (channel) {
-					channel.send(`ทุกคนคะ วันนี้เป็นวันเกิดของ **${index}** แหละ มาร่วมฉลองให้กับวันคล้ายวันเกิดกันหน่อยเร็ว`);
-				}
 			}
 		}
 	}, 60000);
