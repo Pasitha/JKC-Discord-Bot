@@ -3,6 +3,8 @@ const fs = require('fs');
 const jsonstringify = require("json-stringify-pretty-compact");
 const config = require('../settings.json');
 
+let jkc_json_file = require('../jkc.json');
+
 module.exports = client => {
     const todayStr = new Date().toLocaleString('en-US', { year: '2-digit', month: '2-digit', day: '2-digit', timeZone: 'Asia/Bangkok' }).slice(0,5);
 
@@ -11,7 +13,7 @@ module.exports = client => {
         fs.writeFile('settings.json', jsonstringify(config), (err) => {
             if (err) throw err;
         });
-
+        
         for (let i = 0; i < jkc_json_file.member.length; i++) {
             if (jkc_json_file.member[i].birthDay.slice(0, 5) === todayStr) {
                 const HBDEmbed = new MessageEmbed()
