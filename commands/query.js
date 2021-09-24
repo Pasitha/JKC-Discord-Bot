@@ -14,8 +14,6 @@ module.exports.run = async (client, message, args) => {
     let embed2 = new Discord.MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL())
     .setTitle('👱🏻คำสั่งของ JKC Discord Bot (หนูนี้เองง) มีอะไรบ้าง ?').setDescription('ใน Github มีคำสั่งทิ้งหมดของหนูเขียนเอาไว้ให้แล้วค่าาา อ่านในนั้นรู้ทั้ง Code และ คำสั่งเลยนะคะ😅')
 
-    
-
     const rowhome = new MessageActionRow()
         .addComponents(
             new MessageButton()
@@ -115,6 +113,7 @@ module.exports.run = async (client, message, args) => {
         }
     });
 }
+
 module.exports.config = {
     name: "query",
     aliases: []
