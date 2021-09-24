@@ -34,7 +34,7 @@
         },
         "pictureName" : "Jinja-village.png"
     },
-    "xlaxycat" : {
+    "xlazycat" : {
         "get_position" : {
             "nether" : [166, 115, 18],
             "overworld" : [1331, 63, 136]
