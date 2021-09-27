@@ -24,15 +24,33 @@ Discord bot for <b>Jukucrush's official discord server</b>
 	npm install
 	```
 3. make sure your bot has __[Privileged Gateway Intents](https://discord.com/developers/applications "Discord Developer Portal")__
-4. put your bot token at __setting.js__ file at the token value
+4. set your bot token and minecraft account at __setting.js__ file at the token value<br>
+	<h4><b>Example</b></h4>
+	
 	```json
 	{
-		"token": "TOKEN"
+	  "token": "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz1234567",
+	  "prefix": "$",
+	  "ownerIDS": ["111111111111111111"],
+	  "version": "v.0.1.3",
+	  "lastrun": "xx/xx",
+	  "minecraftid": {
+	    "Pasitha": {
+	      "host": "192.168.1.33",
+	      "username": "pasitha@example.com",
+	      "password": "thisisPasithapassword",
+	      "auth": "mocrosoft"
+	    }
+	  }
 	}
 	```
-5. and then run the script 
+5. and then __run__ the script 
 	```sh-session
 	npm start
+	```
+	or
+	```sh-session
+	node .
 	```
 
 ## Feature (command)
