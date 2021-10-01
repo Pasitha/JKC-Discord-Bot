@@ -39,7 +39,7 @@ Discord bot for <b>Jukucrush's official discord server</b>
 	      "host": "192.168.1.33",
 	      "username": "pasitha@example.com",
 	      "password": "thisisPasithapassword",
-	      "auth": "mocrosoft"
+	      "auth": "microsoft"
 	    }
 	  }
 	}
