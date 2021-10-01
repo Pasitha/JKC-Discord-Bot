@@ -1,0 +1,128 @@
+{
+    "spawn" : {
+        "get_position" : {
+            "nether" : [-7, 115, 15],
+            "overworld" : [-77, 69, 133]
+        },
+        "pictureName" : "spawn.png"
+    },
+    "shoppingZone" : {
+        "get_position" : {
+            "nether" : [2, 115, 49],
+            "overworld" : [100, 67, 447]
+        },
+        "pictureName" : "shopping-zone.png"
+    },
+    "_faxky" : {
+        "get_position" : {
+            "nether" : [60, 115, -36],
+            "overworld" : [485, 65, -365]
+        },
+        "pictureName" : "_Faxky.png"
+    },
+    "lazyvillage" : {
+        "get_position" : {
+            "nether" : [109, 115, -223],
+            "overworld" : [847, 64, -1772]
+        },
+        "pictureName" : "Lazy-village.png"
+    },
+    "magicvillage" : {
+        "get_position" : {
+            "nether" : [143, 115, 15],
+            "overworld" : [1152, 71, 103]
+        },
+        "pictureName" : "Jinja-village.png"
+    },
+    "xlazycat" : {
+        "get_position" : {
+            "nether" : [166, 115, 18],
+            "overworld" : [1331, 63, 136]
+        },
+        "pictureName" : "Jinja-village.png"
+    },
+    "jungle" : {
+        "get_position" : {
+            "nether" : [437, 115, -409],
+            "overworld" : [351, 93, -3304]
+        },
+        "pictureName" : "Jinja-village.png"
+    },
+    "truefaster" : {
+        "get_position" : {
+            "nether" : [117, 115, 83],
+            "overworld" : [940, 64, 647]
+        },
+        "pictureName" : "truefaster.png"
+    },
+    "axolotl_community" : {
+        "get_position" : {
+            "nether" : [173, 115, 89],
+            "overworld" : [1337, 65, 712]
+        },
+        "pictureName" : "Axolotl-community.png"
+    },
+    "pokpongkung_CGM" : {
+        "get_position" : {
+            "nether" : [194, 115, 101],
+            "overworld" : [1575, 70, 856]
+        },
+        "pictureName" : "Pokpongkung_CGM.png"
+    },
+    "desert_birth_forest" : {
+        "get_position" : {
+            "nether" : [118,115, 165],
+            "overworld" : [905, 64, 1331]
+        },
+        "pictureName" : "Axolotl-community.png"
+    },
+    "อิหยังวะ" : {
+        "get_position" : {
+            "nether" : [-78, 115, 55],
+            "overworld" : [-661, 73, 486]
+        },
+        "pictureName" : "อิหยังวะ.png"
+    },
+    "aleph" : {
+        "get_position" : {
+            "nether" : [-168, 115, -182],
+            "overworld" : [-1374, 64, -1519]
+        },
+        "pictureName" : "aleph.png"
+    },
+    "มัดรวม" : {
+        "get_position" : {
+            "nether" : [-252, 115, -61],
+            "overworld" : [-2034, 57, -500]
+        },
+        "pictureName" : "มัดรวม.png"
+    },
+    "the_end" : {
+        "get_position" : {
+            "nether" : [-316, 115, -40],
+            "overworld" : [-2544, -16, -373]
+        },
+        "pictureName" : "the_end.png"
+    },
+    "zelextion" : {
+        "get_position" : {
+            "nether" : [-569, 115, -53],
+            "overworld" : [-4551, 68, -467]
+        },
+        "pictureName" : "zelextion.png"
+    },
+    "pakpon" : {
+        "get_position" : {
+            "nether" : [-5167, 68, 1198],
+            "overworld" : [-645, 115, 148]
+        },
+        "pictureName" : "pakpon.png"
+    },
+    "theme_park" : {
+        "get_position" : {
+            "nether" : [-1852, 64, -3332],
+            "overworld" : [-227, 115, -410]
+        },
+        "pictureName" : "theme-park.png"
+    }
+}
