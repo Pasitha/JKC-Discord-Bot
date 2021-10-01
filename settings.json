@@ -1,15 +1,45 @@
 {
-  "token": "<token>",
+  "token": "<Discord Bot Token>",
   "prefix": "$",
-  "ownerIDS": ["504180445899128843"],
+  "ownerIDS": ["<owner Discord id>"],
   "version": "v.0.1.3",
-  "lastrun": "xx/xx",
+  "lastrun": "10/01",
   "minecraftid": {
-    "<minecraftid>": {
-      "host": "<ipserver>",
-      "username": "<username>",
+    "JukkyjungJR": {
+      "host": "<server ip>",
+      "username": "<email>",
       "password": "<password>",
-      "auth": "<mojang or microsoft>"
+      "auth": "mojang",
+      "version": false,
+      "plugins": {},
+      "hideErrors": true,
+      "logErrors": true,
+      "loadInternalPlugins": true,
+      "client": null,
+      "brand": "vanilla",
+      "majorVersion": "1.17",
+      "protocolVersion": 756,
+      "port": 25565,
+      "closeTimeout": 120000,
+      "noPongTimeout": 5000
+    },
+    "JukkyjungSUP": {
+      "host": "<server ip>",
+      "username": "<email>",
+      "password": "<password>",
+      "auth": "mojang",
+      "version": false,
+      "plugins": {},
+      "hideErrors": true,
+      "logErrors": true,
+      "loadInternalPlugins": true,
+      "client": null,
+      "brand": "vanilla",
+      "majorVersion": "1.17",
+      "protocolVersion": 756,
+      "port": 25565,
+      "closeTimeout": 120000,
+      "noPongTimeout": 5000
     }
   }
 }
