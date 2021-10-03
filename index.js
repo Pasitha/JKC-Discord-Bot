@@ -26,7 +26,6 @@ const config = require('./settings.json');
 require('./utils/loadEvents')(client);
 require('./utils/loadCommands')(client);
 
-require('./utils/birthdayUpdate')(client);
 require('./utils/ytUpdate')(client);
 
 client.login(config.token);
