@@ -8,8 +8,8 @@
 
 # JKC-Discord-Bot
 <div float="left">
-  <img src="https://triam.ddns.net/picture/Jukubot.png" width="273">
-  <img src="https://triam.ddns.net/picture/Jukubot1.png" width="230">
+	<img src="https://triam.ddns.net/picture/Jukubot.png" width="273">
+	<img src="https://triam.ddns.net/picture/Jukubot1.png" width="230">
 </div>
 Discord bot for <b>Jukucrush's official discord server</b>
 
@@ -85,7 +85,18 @@ Discord bot for <b>Jukucrush's official discord server</b>
 ## Minecraft Commands
 1. __position__ Used to find the position of other players within the server
 2. __random__ random one number
+	- ```$random``` randomize a number from __1 to 100__
+	- ```$random some_number``` randomize a number from __1 to some_number__
+	- ```$random some_number another_number``` randomize a number from __some_number to another_number__
 
 ## Notification Feature
 1. __Youtube notification__ check feed of youtube channel that defined in [jkc.json](https://github.com/Pasitha/JKC-Discord-Bot/blob/main/index.js#L11-L35 "array youtube channels id ") whether the channel(s) have updated video, live stream, etc. or not
 2. __Birth day notification__ for checking who's birthday today is. Birth day defined in [jkc.json](https://github.com/Pasitha/JKC-Discord-Bot/blob/b1918d5e10470a529fe3542f6b2c80b588c30bcf/jkc.json#L4)
+
+### Jukkyjung Fan Arts
+<div float="left">
+	<img src="https://triam.ddns.net/picture/fanarts/Jukubot_FA1.png" width="150">
+	<img src="https://triam.ddns.net/picture/fanarts/Jukubot_FA2.png" width="200">
+	<img src="https://triam.ddns.net/picture/fanarts/Jukubot_FA3.png" width="200">
+  	<img src="https://triam.ddns.net/picture/fanarts/Jukubot_FA4.png" width="157">
+</div>
