@@ -27,5 +27,10 @@ module.exports = async (mineflayerBot, username, mcMessage) => {
 
             mineflayerBot.chat(`ตอนนี้ ${args[0]} อยู่ที่ x : ${position.x.toFixed(2)}, y : ${position.y.toFixed(2)}, z : ${position.z.toFixed(2)}`);
         break;
+        case 'random':
+            if (!args[0]) return mineflayerBot.chat(`เลขที่ออกคือเลข ${Math.floor((Math.random() * 100)) + 1} ค่ะ`)
+            if (!args[1]) return mineflayerBot.chat(`เลขที่ออกคือเลข ${Math.floor((Math.random() * parseInt(args[0]))) + 1} ค่ะ`)
+            mineflayerBot.chat(`เลขที่ออกคือเลข ${Math.floor((Math.random() * (parseInt(args[1]) - parseInt(args[0]) + 1)) ) + parseInt(args[0])} ค่ะ`)
+        break;
     }
 }
