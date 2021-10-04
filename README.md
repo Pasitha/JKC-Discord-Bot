@@ -99,4 +99,5 @@ Discord bot for <b>Jukucrush's official discord server</b>
 	<img src="https://triam.ddns.net/picture/fanarts/Jukubot_FA2.png" width="200">
 	<img src="https://triam.ddns.net/picture/fanarts/Jukubot_FA3.png" width="200">
   	<img src="https://triam.ddns.net/picture/fanarts/Jukubot_FA4.png" width="157">
+	<img src="https://triam.ddns.net/picture/fanarts/Jukubot_FA5.png" width="183">
 </div>
