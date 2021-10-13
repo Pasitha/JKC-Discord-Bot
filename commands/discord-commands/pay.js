@@ -37,7 +37,7 @@ module.exports.run = (client, JKCJrBot, JKCSupBot, message, args) => {
                     if (err) throw err;
                 });
 
-                return message.channel.send({ embeds: [new MessageEmbed().setTitle(`โอนเงินสำเร็จค่ะะ`).setDescription(`ตอนนี้หนูโอนของ ${message.author.username} ไปให้ ${user.username} เป็นจำนวนเงิน ${args[1]} เรียบร้อยค่ะ`)
+                return message.channel.send({ embeds: [new MessageEmbed().setTitle(`💸โอนเงินสำเร็จค่ะะ💸`).setDescription(`ตอนนี้หนูโอนของ ${message.author.username} ไปให้ ${user.username} เป็นจำนวนเงิน ${args[1]} เรียบร้อยค่ะ💸`)
                     .setThumbnail(client.user.displayAvatarURL()).setColor('#FFD157')
                     .setFooter(client.user.username + ' | Version ' + config.version, client.user.displayAvatarURL())] });
             } else {
