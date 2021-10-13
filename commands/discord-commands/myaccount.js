@@ -11,7 +11,7 @@ module.exports.run = (client, JKCJrBot, JKCSupBot, message, args) => {
         }
     }
 
-    return message.channel.send({ embeds: [new MessageEmbed().setTitle(`🤑บัญชีของ ${message.author.username}🤑`).setDescription(`🎰ตอนนี้คุณ ${message.author.username} มีเงินอยู่ 💲${account[message.author.id].amount} แหน่ะ`)
+    return message.channel.send({ embeds: [new MessageEmbed().setTitle(`🤑บัญชีของ ${message.author.username}🤑`).setDescription(` - ตอนนี้คุณ ${message.author.username} มีเงินอยู่ :dollar: ${account[message.author.id].amount} แหน่ะ`)
         .setThumbnail(client.user.displayAvatarURL()).setColor('#FFD157')
         .setFooter(client.user.username + ' | Version ' + config.version, client.user.displayAvatarURL())] });
 }
