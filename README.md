@@ -63,31 +63,40 @@ Discord bot for <b>Jukucrush's official discord server</b>
 3. __jkc__ want to get some jukucrush infomation, type this command
 	- ```$jkc``` jkc-bot will create embedded about jkc infomation
 	- ```$jkc ดูไรดี``` jkc-bot will randomize a video form jkc team
-4. __query__ commands for asking frequently asked questions(in jukucrush team)
+4. __minecraft skin__ get your minecraft skin
+	- ```$mcskin minecraft_name``` jkc-bot will send minecraft skin of player back to the channel
+	- ```$mchead minecraft_name``` jkc-bot will send minecraft head of player back to the channel
+5. __my account__ command for checking how much money is inside the account
+	- ```$account``` jkc-bot will send your account infomation
+6. __pay__ an instruction used for transferring money to other people on that server
+	- ```$pay @user amount``` The bot will transfer funds from the ordering account to the mentioned users
+7. __query__ commands for asking frequently asked questions(in jukucrush team)
 	- ```$query``` jkc-bot will create embedded questions and clickable react message for choosing options for more explanation
-5. __random number__ random one number
+8. __random number__ random one number
 	- ```$random``` randomize a number from __1 to 100__
 	- ```$random some_number``` randomize a number from __1 to some_number__
 	- ```$random some_number another_number``` randomize a number from __some_number to another_number__
-6. __poll__ create a poll question and vote with reaction button
+9. __poll__ create a poll question and vote with reaction button
 	- ```$vote question description choice1 choice2 choice3 ... choice10``` jkc-bot will create embedded poll and clickable react message for choosing options
-7. __where is__ It is a command used to find out who is at which coordinates in the JKC-Jr.5 server
+10. __where is__ It is a command used to find out who is at which coordinates in the JKC-Jr.5 server
 	- ```$whereis locations_name``` jkc-bot will create embedded for telling the coordinates of that place
-8. __minecraft skin__ get your minecraft skin
-    - ```$mcskin minecraft_name``` jkc-bot will send minecraft skin of player back to the channel
-    - ```$mchead minecraft_name``` jkc-bot will send minecraft head of player back to the channel
-9. __position__ is a command used to check whether Where is the player located within the server?
+
+11. __position__ is a command used to check whether Where is the player located within the server?
 	- ```$position minecraft_name``` jkc-bot will create embedded for telling position of player
-10. __onlineplayer__ It is a command used for checking all players in the server
+12. __onlineplayer__ It is a command used for checking all players in the server
 	- ```$onlineplayer``` jkc-bot will create embedded for telling all player in server
+13. __send to JKC Jr__ Used for sending messages from Discord to JKC Jr.5 server to talk to people in the server
+	- ```$sendjr message``` jkc-bot will send messages from discord to the JKC Jr.5 server
 
 
 ## Minecraft Commands
-1. __position__ Used to find the position of other players within the server
-2. __random__ random one number
+1. __calculate__ used for some mathematical calculations
+2. __position__ used to find the position of other players within the server
+3. __random__ random one number
 	- ```$random``` randomize a number from __1 to 100__
 	- ```$random some_number``` randomize a number from __1 to some_number__
 	- ```$random some_number another_number``` randomize a number from __some_number to another_number__
+4. __send to jkc__ used for sending messages back to the discord. to reply from someone who sent a message from the discord
 
 ## Notification Feature
 1. __Youtube notification__ check feed of youtube channel that defined in [jkc.json](https://github.com/Pasitha/JKC-Discord-Bot/blob/main/index.js#L11-L35 "array youtube channels id ") whether the channel(s) have updated video, live stream, etc. or not
