@@ -1,5 +1,6 @@
-const config = require('../../settings.json')
 const { MessageEmbed } = require("discord.js");
+
+const config = require('../../settings.json');
 
 module.exports.run = (client, JKCJrBot, JKCSupBot, message, args) => {
     function editDistance(string1, string2) {

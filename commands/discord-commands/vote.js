@@ -1,6 +1,6 @@
-const config = require('../../settings.json')
-const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
+
+const config = require('../../settings.json');
 
 module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     if (!args[0]) return message.channel.send({ embeds: [new MessageEmbed().setAuthor("รบกวนช่วยบอก Titleของpollนี้หน่อยค่ะ")] });
@@ -21,7 +21,7 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
         '\uD83D\uDD1F'
     ];
 
-    let embed = new Discord.MessageEmbed().setColor("#FFD157")
+    let embed = new MessageEmbed().setColor("#FFD157")
         .setTitle(args[0]).setDescription(args[1]).setThumbnail(client.user.displayAvatarURL())
         .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL());
 

@@ -8,8 +8,8 @@
 
 # JKC-Discord-Bot
 <div float="left">
-	<img src="https://triam.ddns.net/picture/Jukubot.png" width="273">
-	<img src="https://triam.ddns.net/picture/Jukubot1.png" width="230">
+	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA2.png" width="273">
+	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA4.png" width="230">
 </div>
 Discord bot for <b>Jukucrush's official discord server</b>
 
