@@ -1,5 +1,6 @@
-const config = require('../../settings.json')
 const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
+
+const config = require('../../settings.json');
 
 module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     let commonhelpEmbed = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL()).setURL('https://github.com/Pasitha/JKC-Discord-Bot')

@@ -1,6 +1,7 @@
-const config = require('../../settings.json')
 const Discord = require("discord.js");
 const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
+
+const config = require('../../settings.json');
 
 module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     let QAndA_embed = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL())

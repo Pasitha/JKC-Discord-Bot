@@ -1,5 +1,6 @@
-const config = require('../../settings.json')
 const { MessageEmbed } = require("discord.js");
+
+const config = require('../../settings.json');
 
 module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     const onlienPlayer = new MessageEmbed().setThumbnail(client.user.displayAvatarURL()).setColor('#FFD157')

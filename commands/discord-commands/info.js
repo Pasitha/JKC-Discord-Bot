@@ -1,9 +1,9 @@
-const config = require('../../settings.json')
 const { MessageEmbed } = require('discord.js');
 const moment = require('moment');
 
-module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
+const config = require('../../settings.json');
 
+module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     const user = message.mentions.users.first() || message.author;
     if (!user)
         return message.channel.send({
