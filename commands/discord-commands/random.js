@@ -11,7 +11,6 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
         return message.channel.send({embeds : [new MessageEmbed().setAuthor(`เลขที่ออกคือเลข ${Math.floor((Math.random() * (parseInt(args[1]) - parseInt(args[0]) + 1)) ) + parseInt(args[0])} ค่ะ`)]});
     else 
         return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`คือ หนูจะบอกว่าที่คุณใส่มาน่ะมันไม่ใช่ตัวเลขอะค่ะ ช่วยใส่ให้หนูใหม่ได้มั้ยคะ`).setColor('#ff0000')] });
-    
 }
 
 module.exports.config = {
