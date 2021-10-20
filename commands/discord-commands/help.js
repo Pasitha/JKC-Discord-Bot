@@ -15,7 +15,7 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
             { name: ' - \`$vote\`', value: 'ใช้สำหรับตั้งโพลโหวตส่งต่าง ๆ ที่ต้องการเสียงของคนหลาย ๆ คน' },
         )
         .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL());
-    
+
     let jkcCommandEmbed = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL()).setURL('https://github.com/Pasitha/JKC-Discord-Bot')
         .setTitle('คำสั่งเพิ่มเติมของ JKC\'s Discord Bot').setDescription('ก่อนใช้ทุกคำสั่งใช้ให้พิมพ์นำหน้าด้วย \`$\` แล้วตามด้วยชื่อคำสั่งได้เลย')
         .addFields(
@@ -58,31 +58,29 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
                 .setDisabled(true),
         )
 
-    msg = message.channel.send({ embeds: [commonhelpEmbed], components: [rowhome] });
+    msg = await message.channel.send({ embeds: [commonhelpEmbed], components: [rowhome] });
     const collector = message.channel.createMessageComponentCollector({ time: 15000 });
 
     let authorID = message.author.id;
 
-    msg = await msg;
-
     collector.on('collect', async (b) => {
         if (authorID != message.author.id) return;
         if (b.customId === 'home_btn') {
-            msg.edit({embeds: [commonhelpEmbed], components: [rowhome]});
+            msg.edit({ embeds: [commonhelpEmbed], components: [rowhome] });
             b.deferUpdate();
         }
         if (b.customId === '1') {
-            msg.edit({embeds: [jkcCommandEmbed], components: [row1]});
+            msg.edit({ embeds: [jkcCommandEmbed], components: [row1] });
             b.deferUpdate();
         }
     });
-    
+
     collector.on('end', (collected, reason) => {
         if (reason && reason === `exit`) {
-            msg.edit({components: []});
+            msg.edit({ components: [] });
         }
         if (reason === `time` && collected.size == 0) {
-            msg.edit({components: []});
+            msg.edit({ components: [] });
         }
     });
 }
