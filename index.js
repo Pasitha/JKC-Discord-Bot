@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
+const mineflayer = require('mineflayer');
 const client = new Discord.Client({
-    intents:[
+    intents: [
         "GUILDS",
         "GUILD_BANS",
         "GUILD_EMOJIS_AND_STICKERS",
@@ -23,7 +24,16 @@ client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 const config = require('./settings.json');
 
-require('./utils/loadEvents')(client);
+const JKCJrBot = mineflayer.createBot(config.minecraftid.JukkyjungJR)
+JKCJrBot.once('spawn', () => {
+    console.log('JKC Jr Bot spawn');
+});
+const JKCSupBot = mineflayer.createBot(config.minecraftid.JukkyjungSUP);
+JKCSupBot.once('spawn', () => {
+    console.log('JKC Sup Bot spawn');
+});
+
+require('./utils/loadEvents')(client, { JKCJrBot, JKCSupBot });
 require('./utils/loadCommands')(client);
 
 require('./utils/ytUpdate')(client);

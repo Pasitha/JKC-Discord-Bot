@@ -8,8 +8,8 @@
 
 # JKC-Discord-Bot
 <div float="left">
-	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA2.png" width="273">
-	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA4.png" width="230">
+	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA2.png" width="273">
+	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA4.png" width="230">
 </div>
 Discord bot for <b>Jukucrush's official discord server</b>
 
@@ -54,7 +54,19 @@ Discord bot for <b>Jukucrush's official discord server</b>
 	```sh-session
 	node .
 	```
-
+## DATABASE SET UP
+1. migration
+	```bat
+	yarn start:migration
+	```
+2. studio
+	```bat
+	yarn start:studio
+	```
+3. update 
+	```bat
+	node ./prisma/json2sql.js
+	```
 ## Discord Commands
 1. __help__ need help from this jkc-bot?, type this command
 	- ```$help``` jkc-bot will create embedded help infomation
@@ -104,10 +116,10 @@ Discord bot for <b>Jukucrush's official discord server</b>
 
 ### Jukkyjung Fan Arts
 <div float="left">
-	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA1.png" width="150">
-	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA2.png" width="200">
-	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA3.png" width="200">
-  	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA4.png" width="157">
-	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA5.png" width="163">
-	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA6.png" width="163">
+	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA1.png" width="150">
+	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA2.png" width="200">
+	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA3.png" width="200">
+  	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA4.png" width="157">
+	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA5.png" width="163">
+	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA6.png" width="163">
 </div>
