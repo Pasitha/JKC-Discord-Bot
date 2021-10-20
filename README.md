@@ -56,15 +56,15 @@ Discord bot for <b>Jukucrush's official discord server</b>
 	```
 ## DATABASE SET UP
 1. migration
-	```bat
+	```sh-session
 	yarn start:migration
 	```
 2. studio
-	```bat
+	```sh-session
 	yarn start:studio
 	```
 3. update 
-	```bat
+	```sh-session
 	node ./prisma/json2sql.js
 	```
 ## Discord Commands
