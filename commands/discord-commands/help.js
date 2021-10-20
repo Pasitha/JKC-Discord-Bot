@@ -89,5 +89,5 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
 
 module.exports.config = {
     name: "help",
-    aliases: ['h', 'จุ๊กกก']
+    aliases: ['h', 'จุ๊กกก'] 
 }
