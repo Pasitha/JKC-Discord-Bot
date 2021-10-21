@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:migration": "npx prisma migrate dev",
+    "start:studio":"npx prisma studio"
   },
   "repository": {
     "type": "git",
@@ -15,7 +16,8 @@
   "authors": [
     "Pasitha",
     "XyZerKunG",
-    "OpecZ CH"
+    "OpecZ CH",
+    "boon4681"
   ],
   "license": "MIT",
   "bugs": {
@@ -23,12 +25,16 @@
   },
   "homepage": "https://github.com/Pasitha/JKC-Discord-Bot#readme",
   "dependencies": {
+    "@prisma/client": "3.3.0",
+    "axios": "^0.23.0",
     "discord.js": "^13.1.0",
     "fs": "^0.0.1-security",
     "json-stringify-pretty-compact": "^3.0.0",
     "mineflayer": "^3.11.1",
     "moment": "^2.29.1",
-    "request": "^2.88.2",
     "rss-parser": "^3.12.0"
+  },
+  "devDependencies": {
+    "prisma": "3.3.0"
   }
 }

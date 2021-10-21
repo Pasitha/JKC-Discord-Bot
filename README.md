@@ -8,8 +8,8 @@
 
 # JKC-Discord-Bot
 <div float="left">
-	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA2.png" width="273">
-	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA4.png" width="230">
+	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA2.png" width="273">
+	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA4.png" width="230">
 </div>
 Discord bot for <b>Jukucrush's official discord server</b>
 
@@ -152,10 +152,10 @@ Birthdays are defined in [jkc.json](https://github.com/Pasitha/JKC-Discord-Bot/b
 
 ### Jukkyjung Fan Arts
 <div float="left">
-	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA1.png" width="150">
-	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA2.png" width="200">
-	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA3.png" width="200">
-  	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA4.png" width="157">
-	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA5.png" width="163">
-	<img src="https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-discord-bot-fa/Jukubot_FA6.png" width="163">
+	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA1.png" width="150">
+	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA2.png" width="200">
+	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA3.png" width="200">
+  	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA4.png" width="157">
+	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA5.png" width="163">
+	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA6.png" width="163">
 </div>

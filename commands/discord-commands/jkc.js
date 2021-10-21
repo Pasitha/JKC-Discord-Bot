@@ -1,14 +1,14 @@
-const { MessageEmbed , MessageActionRow , MessageButton} = require('discord.js');
+const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
 
 const config = require('../../settings.json');
 
 module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     if (!args[0]) {
         const link = new MessageActionRow()
-            .addComponents(new MessageButton().setURL('https://www.facebook.com/JukucrushTeam?ref=hl').setLabel('Fackbook').setStyle('LINK'))
+            .addComponents(new MessageButton().setURL('https://www.facebook.com/JukucrushTeam?ref=hl').setLabel('Facebook').setStyle('LINK'))
             .addComponents(new MessageButton().setURL('https://www.youtube.com/channel/UC-lNawOSpzmBSO-IqKImcfw').setLabel('Youtube').setStyle('LINK'))
             .addComponents(new MessageButton().setURL('https://github.com/opecgame/JKC-Discord-Bot').setLabel('Github').setStyle('LINK'));
-        
+
         const embedjkcinfo = new MessageEmbed()
             .setThumbnail(client.user.displayAvatarURL()).setColor('#FFD157')
             .setTitle('--สวัสดีค่ะ น้องจุ๊ก เอง--').setURL('https://github.com/Pasitha/JKC-Discord-Bot')
@@ -17,18 +17,18 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
             .addField('👨🏻‍💻สามารถตรวจสอบคำสั่งและอัพเดตทั้งหมดได้ที่', '[Github JKC - Discord Bot](https://github.com/Pasitha/JKC-Discord-Bot)')
             .addField('👉🏻หรือสามารถพิมพ์', '```$help```')
             .setFooter(client.user.username + ' | Version ' + config.version, client.user.displayAvatarURL());
-        
-        return message.channel.send({ embeds : [embedjkcinfo], components : [link] });
+
+        return message.channel.send({ embeds: [embedjkcinfo], components: [link] });
     } else if (args[0] === 'ดูไรดี') {
         function youtube_parser(url) {
             let regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
             let match = url.match(regExp);
-            return (match && match[7].length==11)? match[7] : false;
+            return (match && match[7].length == 11) ? match[7] : false;
         }
 
         const JKC = require('../../database/jkc.json');
         const randomMember = Math.floor(Math.random() * JKC.member.length);
-        let randomRecentClip = JKC.member[randomMember].youtube.lastVideoUpdate[Math.floor(Math.random() * 3)];
+        let randomRecentClip = null;
 
         while (!randomRecentClip)
             randomRecentClip = JKC.member[randomMember].youtube.lastVideoUpdate[Math.floor(Math.random() * 3)];
@@ -39,7 +39,7 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
             .addField('นี้เลยหนูแนะนำลองไปดูคลิปนี้เลย', `ของช่อง [${JKC.member[randomMember].youtube.channelName}](${randomRecentClip}) ไปดูกันนนน`)
             .setFooter(client.user.username + ' | Version ' + config.version, client.user.displayAvatarURL());
 
-        return message.channel.send({ embeds : [recentClipEmbed] });
+        return message.channel.send({ embeds: [recentClipEmbed] });
     }
 }
 
