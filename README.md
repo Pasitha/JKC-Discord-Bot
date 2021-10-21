@@ -15,7 +15,7 @@ Discord bot for <b>Jukucrush's Official Discord Server</b>
 
 # Project Requirements
 - [node.js v.16](https://nodejs.org/en/download/current/ "node.js")
-- discord.js v.13 (will be installed automatically after following step 2 in the "Installation and Setup" part)
+- discord.js v.13 (will be installed automatically after following step 2 in the __Installation and Setup__ part)
 
 ## Installation and Setup
 1. Clone the project 
