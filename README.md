@@ -39,22 +39,22 @@ discord.js v.13 (will be installed automatically after following step 2 in the "
   		"lastrun": "xx/xx",
  		"minecraftid": {
    			"Pasitha": {
-      			"host": "192.168.1.33",
-      			"username": "pasitha@example.com",
-      			"password": "thisisPasithapassword",
-      			"auth": "microsoft",
-      			"version": false,
-      			"plugins": {},
-      			"hideErrors": true,
-      			"logErrors": true,
-      			"loadInternalPlugins": true,
-      			"client": null,
-      			"brand": "vanilla",
-      			"majorVersion": "1.17",
-      			"protocolVersion": 756,
-      			"port": 25565,
-     			"closeTimeout": 120000,
-      			"noPongTimeout": 5000
+				"host": "192.168.1.33",
+				"username": "pasitha@example.com",
+				"password": "thisisPasithapassword",
+				"auth": "microsoft",
+				"version": false,
+				"plugins": {},
+				"hideErrors": true,
+				"logErrors": true,
+				"loadInternalPlugins": true,
+				"client": null,
+				"brand": "vanilla",
+				"majorVersion": "1.17",
+				"protocolVersion": 756,
+				"port": 25565,
+				"closeTimeout": 120000,
+				"noPongTimeout": 5000
     			}
  		}
 	}
