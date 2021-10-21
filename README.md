@@ -59,7 +59,7 @@ discord.js v.13 (will be installed automatically after following step 2 in the "
  		}
 	}
 	```
-5. Then, __run__ the script you can use either
+5. Then, __run__ the script. You can either use
 	```sh-session
 	npm start
 	```
@@ -67,6 +67,9 @@ discord.js v.13 (will be installed automatically after following step 2 in the "
 	```sh-session
 	node .
 	```
+	(Open a terminal/ command prompt/ etc. in the bot's folder, or you can make a run.bat file in the bot's folder and then, right-click the 
+file select "Edit" and put in either ```npm start``` or ```node .```)
+	
 ## Database Setup
 1. __Migration__
  	- ```yarn start:migration```
@@ -108,27 +111,44 @@ between options.
 	- ```$whereis locationName```, the bot will send an embed telling the coordinates of that place, both Overworld coordinates and Nether 
 coordinates.
 	- ```$whereis```, the bot will send an embed showing all the valid location names.
-
-11. __Position__
-	- ```$position minecraftName``` jkc-bot will create embedded for telling position of player
-12. __onlineplayer__ It is a command used for checking all players in the server
-	- ```$onlineplayer``` jkc-bot will create embedded for telling all player in server
-13. __send to JKC Jr__ Used for sending messages from Discord to JKC Jr.5 server to talk to people in the server
-	- ```$sendjr message``` jkc-bot will send messages from discord to the JKC Jr.5 server
-
+11. __Position__  
+	Can only be used in the Jukucrush's Official Discord Server
+	- ```$position minecraftName```, ```$pos minecraftName```, the bot will send an embed showing the position of the player defined, 
+__minecraftName__, in the Jukucrush Junior SS.5 server.
+	- ```$position```, ```$pos```, the bot will send an embed showing the position of the bot itself in the Jukucrush Junior SS.5 server.
+12. __Online Players__ 
+	Can only be used in the Jukucrush's Official Discord Server
+	- ```$onlineplayer```, ```$list```, the bot will send an embed showing a list of online players in the Jukucrush Junior SS.5 server.
+13. __Send to Jukucrush Junior__ 
+	Can only be used in the Jukucrush's Official Discord Server, and only people with the roles
+		1. Jukucrush Member
+		2. Jukucrush Junior
+		3. Jukuboost
+		4. Moderator
+	can use this command.
+	- ```$sendjr message```, the bot will send the message to the server, Jukucrush Junior SS.5.
 
 ## Minecraft Commands
-1. __calculate__ used for some mathematical calculations
-2. __position__ used to find the position of other players within the server
-3. __random__ random one number
-	- ```$random``` randomize a number from __1 to 100__
-	- ```$random some_number``` randomize a number from __1 to some_number__
-	- ```$random some_number another_number``` randomize a number from __some_number to another_number__
-4. __send to jkc__ used for sending messages back to the discord. to reply from someone who sent a message from the discord
+1. __Calculate__ 
+	- ```$cal question```, The bot will calculate what you asked, __question__, and send the answer back into the in-game chat.
+2. __Position__
+	- ```$position minecraftName```, ```$pos minecraftName```, the bot will send the position of the player defined, 
+__minecraftName__, in the Jukucrush Junior SS.5 server, back into the in-game chat.
+3. __Random Number__
+	- ```$random```, the bot will randomize a number from __1 to 100__
+	- ```$random definedNumber```, the bot will randomize a number from __1__ to __definedNumber__
+	- ```$random number1 number2```, the bot will randomize a number from __number1__ to __number2__
+4. __Send to Jukucrush's Official Discord Server__ 
+	- ```$sendjkc message```, the bot will send the message to the Discord server, it is used by the Jukucrush Junior Members 
+and Jukucrush Members in order to reply to someone who sent message(s) from the Discord server.
 
-## Notification Feature
-1. __Youtube notification__ check feed of youtube channel that defined in [jkc.json](https://github.com/Pasitha/JKC-Discord-Bot/blob/main/index.js#L11-L35 "array youtube channels id ") whether the channel(s) have updated video, live stream, etc. or not
-2. __Birth day notification__ for checking who's birthday today is. Birth day defined in [jkc.json](https://github.com/Pasitha/JKC-Discord-Bot/blob/b1918d5e10470a529fe3542f6b2c80b588c30bcf/jkc.json#L4)
+## Notification Features
+1. __YouTube Notifications__ 
+	- The bot will check the feed of the YouTube channels if they have uploaded a video, started a livestream, etc. or not
+YouTube channels are defined in [jkc.json](https://github.com/Pasitha/JKC-Discord-Bot/blob/main/index.js#L11-L35 "array youtube channels id ")
+2. __Birthday Notifications__ (Jukucrush Members' Birthday only)
+	- The bot will check whose birthday today is, and send a Happy Birthday message to the main chat in the Jukucrush's Discord server. 
+Birthdays are defined in [jkc.json](https://github.com/Pasitha/JKC-Discord-Bot/blob/b1918d5e10470a529fe3542f6b2c80b588c30bcf/jkc.json#L4)
 
 ### Jukkyjung Fan Arts
 <div float="left">
