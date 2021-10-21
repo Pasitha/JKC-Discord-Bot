@@ -55,7 +55,7 @@ discord.js v.13 (will be installed automatically after following step 2 in the "
 				"port": 25565,
 				"closeTimeout": 120000,
 				"noPongTimeout": 5000
-    			}
+    		}
  		}
 	}
 	```
