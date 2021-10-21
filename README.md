@@ -11,11 +11,11 @@
 	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA2.png" width="273">
 	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA4.png" width="230">
 </div>
-Discord bot for <b>Jukucrush's official discord server</b>
+Discord bot for <b>Jukucrush's Official Discord Server</b>
 
 # Project Requirements
-[node.js v.16](https://nodejs.org/en/download/current/ "node.js")
-discord.js v.13 (will be installed automatically after following step 2 in the "Installation and Setup" part)
+- [node.js v.16](https://nodejs.org/en/download/current/ "node.js")
+- discord.js v.13 (will be installed automatically after following step 2 in the "Installation and Setup" part)
 
 ## Installation and Setup
 1. Clone the project 
