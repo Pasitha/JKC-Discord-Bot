@@ -14,10 +14,10 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
             ]
         });
     const member = message.mentions.members.last() || message.member;
-    const roles = member.roles.cache
+    let roles = member.roles.cache
         .sort((a, b) => b.position - a.position)
-        .map(role => role.toString())
-        .slice(0);
+        .map(role => role.toString());
+    roles.pop();
 
     moment.locale('th');
     const embeduserinfo = new MessageEmbed().setColor(member.displayHexColor).setFooter(client.user.username + ' | Version ' + config.version, client.user.displayAvatarURL())

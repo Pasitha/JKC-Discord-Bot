@@ -1,10 +1,8 @@
 const { MessageEmbed } = require("discord.js");
-const fs = require('fs');
-const jsonstringify = require('json-stringify-pretty-compact');
-const config = require('../../settings.json');
-let account = require('../../database/account.json');
 const { PrismaClient } = require('@prisma/client')
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
+
+const config = require('../../settings.json');
 
 module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     let account_1 = await prisma.user.findUnique({
