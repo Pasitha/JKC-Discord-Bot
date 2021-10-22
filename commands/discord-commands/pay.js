@@ -9,14 +9,14 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
         where: {
             discord_id: message.author.id
         }
-    })
+    });
     if (!account_1) {
         account_1 = await prisma.user.create({
             data: {
                 discord_id: message.author.id,
                 discord_name: message.author.username
             }
-        })
+        });
     }
 
     if (account_1.coins > 0) {
@@ -28,14 +28,14 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
                 where: {
                     discord_id: user.id
                 }
-            })
+            });
             if (!account_2) {
                 account_2 = await prisma.user.create({
                     data: {
                         discord_id: user.id,
                         discord_name: user.username
                     }
-                })
+                });
             }
 
             if (!/([0-9]+)/.test(args[1])) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`ช่วยบอกจำนวนเงินที่จะโอนให้ด้วยนะคะ`).setColor('#ff0000')] });
@@ -51,7 +51,7 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
                     data: {
                         ...account_1
                     }
-                })
+                });
                 await prisma.user.update({
                     where: {
                         discord_id: account_2.discord_id
@@ -59,7 +59,7 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
                     data: {
                         ...account_2
                     }
-                })
+                });
                 return message.channel.send({
                     embeds: [new MessageEmbed().setTitle(`💸โอนเงินสำเร็จค่ะะ💸`).setDescription(`ตอนนี้หนูโอนของ ${message.author.username} ไปให้ ${user.username} เป็นจำนวนเงิน ${args[1]} เรียบร้อยค่ะ💸`)
                         .setThumbnail(client.user.displayAvatarURL()).setColor('#FFD157')

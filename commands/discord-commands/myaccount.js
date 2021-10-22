@@ -1,23 +1,22 @@
 const { MessageEmbed } = require("discord.js");
 const { PrismaClient } = require('@prisma/client')
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
 const config = require('../../settings.json');
-let account = require('../../database/account.json');
 
 module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     let account = await prisma.user.findUnique({
         where: {
             discord_id: message.author.id
         }
-    })
+    });
     if (!account) {
         account = await prisma.user.create({
             data: {
                 discord_id: message.author.id,
                 discord_name: message.author.username
             }
-        })
+        });
     }
     return message.channel.send({
         embeds: [new MessageEmbed()
