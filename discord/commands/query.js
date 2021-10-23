@@ -3,7 +3,7 @@ const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
 
 const config = require('../../settings.json');
 
-module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
+module.exports.run = async (client, message, args) => {
     let QAndA_embed = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL())
         .setTitle('👱🏻‍♀️สวัสดีค่ะมีคำถามอะไรอยากถามหนูหรอคะ').setDescription('😅คำถามที่ทุกคนมักจะถามกัน')
         .addField('1️⃣ ตอนนี้เปิดรับสมัคร Junior มั้ย ?', '⏰ตอนนี้ยังไม่รับสมัครนะคะ')
@@ -118,7 +118,4 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     });
 }
 
-module.exports.config = {
-    name: 'query',
-    aliases: []
-}
+module.exports.name = ['query'];

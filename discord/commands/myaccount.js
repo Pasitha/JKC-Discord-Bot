@@ -27,7 +27,4 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     });
 }
 
-module.exports.config = {
-    name: 'myaccount',
-    aliases: ['account']
-}
+module.exports.name = ['account'];

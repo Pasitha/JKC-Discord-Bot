@@ -2,7 +2,7 @@ const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
 
 const config = require('../../settings.json');
 
-module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
+module.exports.run = async (client, message, args) => {
     if (!args[0]) {
         const link = new MessageActionRow()
             .addComponents(new MessageButton().setURL('https://www.facebook.com/JukucrushTeam?ref=hl').setLabel('Facebook').setStyle('LINK'))
@@ -43,7 +43,4 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     }
 }
 
-module.exports.config = {
-    name: 'jkc',
-    aliases: ['jukucrush']
-}
+module.exports.name = ['jkc', 'jukucrush'];

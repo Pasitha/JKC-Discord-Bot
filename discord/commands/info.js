@@ -3,7 +3,7 @@ const moment = require('moment');
 
 const config = require('../../settings.json');
 
-module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
+module.exports.run = async (client, message, args) => {
     const user = message.mentions.users.first() || message.author;
     if (!user)
         return message.channel.send({
@@ -32,7 +32,4 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     return message.channel.send({ embeds: [embeduserinfo] })
 }
 
-module.exports.config = {
-    name: 'info',
-    aliases: ['if']
-}
+module.exports.name = ['info'];

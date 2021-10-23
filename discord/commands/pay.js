@@ -4,7 +4,7 @@ const prisma = new PrismaClient();
 
 const config = require('../../settings.json');
 
-module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
+module.exports.run = async (client, message, args) => {
     let account_1 = await prisma.user.findUnique({
         where: {
             discord_id: message.author.id
@@ -74,7 +74,4 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     }
 }
 
-module.exports.config = {
-    name: 'pay',
-    aliases: ['give']
-}
+module.exports.name = ['pay', 'give'];
