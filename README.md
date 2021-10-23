@@ -11,42 +11,55 @@
 	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA2.png" width="273">
 	<img src="./picture/jkc-discord-bot-fa/Jukubot_FA4.png" width="230">
 </div>
-Discord bot for <b>Jukucrush's official discord server</b>
+Discord bot for <b>Jukucrush's Official Discord Server</b>
 
-# Project requirement
-[node.js v16](https://nodejs.org/en/download/current/ "node.js")
+# Project Requirements
+- [node.js v.16](https://nodejs.org/en/download/current/ "node.js")
+- discord.js v.13 (will be installed automatically after following step 2 in the __Installation and Setup__ part)
 
-## INSTALLATION AND SET UP
-1. clone the project
+## Installation and Setup
+1. Clone the project 
 	```sh-session
 	git clone https://github.com/Pasitha/JKC-Discord-Bot.git
 	```
-2. installs modules defined in the dependencies section of the __package.json__ file 
+2. Install required dependencies defined by me, Pasitha, in the __package.json__ file 
 	```sh-session
 	npm install
 	```
-3. make sure your bot has __[Privileged Gateway Intents](https://discord.com/developers/applications "Discord Developer Portal")__
-4. set your bot token and minecraft account at __setting.js__ file at the token value<br>
+3. Make sure your bot has __[Privileged Gateway Intents](https://discord.com/developers/applications "Discord Developer Portal")__
+4. Set your bot token (required) and minecraft account (optional if you want the commands in the minecraft-commands section to be usable) in the __settings.json__ file (Note : Do not use the commands in the minecraft-commands section if you didn't put in your minecraft account information.)<br>
 	<h4><b>Example</b></h4>
 	
 	```json
 	{
-	  "token": "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz1234567",
-	  "prefix": "$",
-	  "ownerIDS": ["111111111111111111"],
-	  "version": "v.0.1.3",
-	  "lastrun": "xx/xx",
-	  "minecraftid": {
-	    "Pasitha": {
-	      "host": "192.168.1.33",
-	      "username": "pasitha@example.com",
-	      "password": "thisisPasithapassword",
-	      "auth": "microsoft"
-	    }
-	  }
+  		"token": "TokenGoesHere",
+ 	 	"prefix": "$",
+ 		"ownerIDS": ["OwnerDiscordID", "Owner2DiscordID"],
+ 		"version": "v.0.1.4",
+  		"lastrun": "xx/xx",
+ 		"minecraftid": {
+   			"Pasitha": {
+				"host": "192.168.1.33",
+				"username": "pasitha@example.com",
+				"password": "thisisPasithapassword",
+				"auth": "microsoft",
+				"version": false,
+				"plugins": {},
+				"hideErrors": true,
+				"logErrors": true,
+				"loadInternalPlugins": true,
+				"client": null,
+				"brand": "vanilla",
+				"majorVersion": "1.17",
+				"protocolVersion": 756,
+				"port": 25565,
+				"closeTimeout": 120000,
+				"noPongTimeout": 5000
+    		}
+ 		}
 	}
 	```
-5. and then __run__ the script 
+5. Then, __run__ the script. You can either use
 	```sh-session
 	npm start
 	```
@@ -54,65 +67,88 @@ Discord bot for <b>Jukucrush's official discord server</b>
 	```sh-session
 	node .
 	```
-## DATABASE SET UP
-1. migration
-	```sh-session
-	yarn start:migration
-	```
-2. studio
-	```sh-session
-	yarn start:studio
-	```
-3. update 
-	```sh-session
-	node ./prisma/json2sql.js
-	```
+	(Open a terminal/ command prompt/ etc. in the bot's folder, or you can make a run.bat file in the bot's folder and then, right-click the 
+file select "Edit" and put in either ```npm start``` or ```node .```)
+	
+## Database Setup
+1. __Migration__
+ 	- ```yarn start:migration```
+2. __Studio__
+	- ```yarn start:studio```
+3. __Update__
+	- ```node ./prisma/json2sql.js``` 
+
 ## Discord Commands
-1. __help__ need help from this jkc-bot?, type this command
-	- ```$help``` jkc-bot will create embedded help infomation
-2. __user information__ user information appears once the user types this command
-	- ```$info @user``` user information will be embedded by jkc-bot
-3. __jkc__ want to get some jukucrush infomation, type this command
-	- ```$jkc``` jkc-bot will create embedded about jkc infomation
-	- ```$jkc ดูไรดี``` jkc-bot will randomize a video form jkc team
-4. __minecraft skin__ get your minecraft skin
-	- ```$mcskin minecraft_name``` jkc-bot will send minecraft skin of player back to the channel
-	- ```$mchead minecraft_name``` jkc-bot will send minecraft head of player back to the channel
-5. __my account__ command for checking how much money is inside the account
-	- ```$account``` jkc-bot will send your account infomation
-6. __pay__ an instruction used for transferring money to other people on that server
-	- ```$pay @user amount``` The bot will transfer funds from the ordering account to the mentioned users
-7. __query__ commands for asking frequently asked questions(in jukucrush team)
-	- ```$query``` jkc-bot will create embedded questions and clickable react message for choosing options for more explanation
-8. __random number__ random one number
-	- ```$random``` randomize a number from __1 to 100__
-	- ```$random some_number``` randomize a number from __1 to some_number__
-	- ```$random some_number another_number``` randomize a number from __some_number to another_number__
-9. __poll__ create a poll question and vote with reaction button
-	- ```$vote question description choice1 choice2 choice3 ... choice10``` jkc-bot will create embedded poll and clickable react message for choosing options
-10. __where is__ It is a command used to find out who is at which coordinates in the JKC-Jr.5 server
-	- ```$whereis locations_name``` jkc-bot will create embedded for telling the coordinates of that place
-
-11. __position__ is a command used to check whether Where is the player located within the server?
-	- ```$position minecraft_name``` jkc-bot will create embedded for telling position of player
-12. __onlineplayer__ It is a command used for checking all players in the server
-	- ```$onlineplayer``` jkc-bot will create embedded for telling all player in server
-13. __send to JKC Jr__ Used for sending messages from Discord to JKC Jr.5 server to talk to people in the server
-	- ```$sendjr message``` jkc-bot will send messages from discord to the JKC Jr.5 server
-
+1. __Help__
+	- ```$help``` , the bot will send an embed showing all the commands this bot has.
+2. __User Information__
+	- ```$info @user```, the bot will send an embed with the mentioned user's information.
+	- ```$info```, the bot will send an embed with the user's information.
+3. __Jukucrush__
+	- ```$jkc```, the bot will send an embed with clickable buttons to Jukucrush Team's Official YouTube Channel, Facebook Page, and also this
+very GitHub repository. 
+	- ```$jkc ดูไรดี```, the bot will send an embed with a link to a random video, made by Jukucrush Team's members.
+4. __Minecraft Skin, Minecraft Head__
+	- ```$mcskin minecraftName```, the bot will send the player's minecraft skin back into the channel where the command is used. (Example : 
+```$mcskin Pasitha```, the bot will send Pasitha's current minecraft skin.)
+	- ```$mchead minecraftName```,  the bot will send the player's minecraft head back into the channel where the command is used. (Example : 
+```$mchead Pasitha```, the bot will send Pasitha's current minecraft head.)
+5. __My Account__ (Per-Server Data)
+	- ```$account```, the bot will send an embed showing how much money you have in your account right now. (Base Amount : 100)
+6. __Pay__ (Per-Server Data)
+	- ```$pay @user amount```, the bot will transfer the money defined from the user who used the command to the user mentioned in the 
+command.
+7. __Query (FAQ)__
+	- ```$query```, the bot will send an embed, with clickable buttons, showing Jukucrush's FAQs.
+8. __Random Number__
+	- ```$random```, the bot will randomize a number from __1 to 100__
+	- ```$random definedNumber```, the bot will randomize a number from __1__ to __definedNumber__
+	- ```$random number1 number2```, the bot will randomize a number from __number1__ to __number2__
+9. __Poll__
+	- ```$vote question description choice1 choice2 choice3 ... choice10```, the bot will send an embed with clickable reactions to choose 
+between options.
+10. __Where Is?__ (Made especially for Jukucrush Junior SS.5's members) 
+	- ```$whereis locationName```, the bot will send an embed telling the coordinates of that place, both Overworld coordinates and Nether 
+coordinates.
+	- ```$whereis```, the bot will send an embed showing all the valid location names.
+11. __Position__  
+	Can only be used in the Jukucrush's Official Discord Server
+	- ```$position minecraftName```, ```$pos minecraftName```, the bot will send an embed showing the position of the player defined, 
+__minecraftName__, in the Jukucrush Junior SS.5 server.
+	- ```$position```, ```$pos```, the bot will send an embed showing the position of the bot itself in the Jukucrush Junior SS.5 server.
+12. __Online Players__ 
+	Can only be used in the Jukucrush's Official Discord Server
+	- ```$onlineplayer```, ```$list```, the bot will send an embed showing a list of online players in the Jukucrush Junior SS.5 server.
+13. __Send to Jukucrush Junior__ 
+	Can only be used in the Jukucrush's Official Discord Server, and only people with the roles
+		1. Jukucrush Member
+		2. Jukucrush Junior
+		3. Jukuboost
+		4. Moderator
+	can use this command.
+	- ```$sendjr message```, the bot will send the message to the server, Jukucrush Junior SS.5.
 
 ## Minecraft Commands
-1. __calculate__ used for some mathematical calculations
-2. __position__ used to find the position of other players within the server
-3. __random__ random one number
-	- ```$random``` randomize a number from __1 to 100__
-	- ```$random some_number``` randomize a number from __1 to some_number__
-	- ```$random some_number another_number``` randomize a number from __some_number to another_number__
-4. __send to jkc__ used for sending messages back to the discord. to reply from someone who sent a message from the discord
+1. __Calculate__ 
+	- ```$cal question```, The bot will calculate what you asked, __question__, and send the answer back into the in-game chat.
+2. __Position__
+	- ```$position minecraftName```, ```$pos minecraftName```, the bot will send the position of the player defined, 
+__minecraftName__, in the Jukucrush Junior SS.5 server, back into the in-game chat.
+3. __Random Number__
+	- ```$random```, the bot will randomize a number from __1 to 100__
+	- ```$random definedNumber```, the bot will randomize a number from __1__ to __definedNumber__
+	- ```$random number1 number2```, the bot will randomize a number from __number1__ to __number2__
+4. __Send to Jukucrush's Official Discord Server__ 
+	- ```$sendjkc message```, the bot will send the message to the Discord server, it is used by the Jukucrush Junior Members 
+and Jukucrush Members in order to reply to someone who sent message(s) from the Discord server.
 
-## Notification Feature
-1. __Youtube notification__ check feed of youtube channel that defined in [jkc.json](https://github.com/Pasitha/JKC-Discord-Bot/blob/main/index.js#L11-L35 "array youtube channels id ") whether the channel(s) have updated video, live stream, etc. or not
-2. __Birth day notification__ for checking who's birthday today is. Birth day defined in [jkc.json](https://github.com/Pasitha/JKC-Discord-Bot/blob/b1918d5e10470a529fe3542f6b2c80b588c30bcf/jkc.json#L4)
+## Notification Features
+1. __YouTube Notifications__ 
+	- The bot will check the feed of the YouTube channels if they have uploaded a video, started a livestream, etc. or not
+YouTube channels are defined in [jkc.json](https://github.com/Pasitha/JKC-Discord-Bot/blob/main/index.js#L11-L35 "array youtube channels id ")
+2. __Birthday Notifications__ (Jukucrush Members' Birthday only)
+	- The bot will check whose birthday today is, and send a Happy Birthday message to the main chat in the Jukucrush's Discord server. 
+Birthdays are defined in [jkc.json](https://github.com/Pasitha/JKC-Discord-Bot/blob/b1918d5e10470a529fe3542f6b2c80b588c30bcf/jkc.json#L4)
 
 ### Jukkyjung Fan Arts
 <div float="left">
