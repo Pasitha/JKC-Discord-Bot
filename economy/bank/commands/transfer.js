@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient();
 
-const config = require('../../settings.json');
+const config = require('../../../settings.json');
 
 module.exports.run = async (client, message, args) => {
     let account_1 = await prisma.user.findUnique({
@@ -44,6 +44,7 @@ module.exports.run = async (client, message, args) => {
             if (parseInt(args[1]) <= account_1.coins) {
                 account_1.coins -= parseInt(args[1]);
                 account_2.coins += parseInt(args[1]);
+
                 await prisma.user.update({
                     where: {
                         discord_id: account_1.discord_id
@@ -60,6 +61,7 @@ module.exports.run = async (client, message, args) => {
                         ...account_2
                     }
                 });
+
                 return message.channel.send({
                     embeds: [new MessageEmbed().setTitle(`💸โอนเงินสำเร็จค่ะะ💸`).setDescription(`ตอนนี้หนูโอนของ ${message.author.username} ไปให้ ${user.username} เป็นจำนวนเงิน ${args[1]} เรียบร้อยค่ะ💸`)
                         .setThumbnail(client.user.displayAvatarURL()).setColor('#FFD157')
@@ -74,4 +76,4 @@ module.exports.run = async (client, message, args) => {
     }
 }
 
-module.exports.name = ['pay', 'give'];
+module.exports.name = ['transfer', 'pay', 'give'];
