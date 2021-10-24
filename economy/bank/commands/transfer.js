@@ -5,13 +5,13 @@ const prisma = new PrismaClient();
 const config = require('../../../settings.json');
 
 module.exports.run = async (client, message, args) => {
-    let account_1 = await prisma.user.findUnique({
+    let account_1 = await prisma.bank_account.findUnique({
         where: {
             discord_id: message.author.id
         }
     });
     if (!account_1) {
-        account_1 = await prisma.user.create({
+        account_1 = await prisma.bank_account.create({
             data: {
                 discord_id: message.author.id,
                 discord_name: message.author.username
@@ -24,13 +24,13 @@ module.exports.run = async (client, message, args) => {
         if (!user || user.id === message.author.id) {
             return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`อยากโดนตังให้ใครหรอคะ บอกหนูหน่อยจิ`).setColor('#ff0000')] });
         } else {
-            let account_2 = await prisma.user.findUnique({
+            let account_2 = await prisma.bank_account.findUnique({
                 where: {
                     discord_id: user.id
                 }
             });
             if (!account_2) {
-                account_2 = await prisma.user.create({
+                account_2 = await prisma.bank_account.create({
                     data: {
                         discord_id: user.id,
                         discord_name: user.username
@@ -45,7 +45,22 @@ module.exports.run = async (client, message, args) => {
                 account_1.coins -= parseInt(args[1]);
                 account_2.coins += parseInt(args[1]);
 
-                await prisma.user.update({
+                account_1.history.push(
+                    {
+                        "date": new Date().toLocaleString('en-US', { year: '2-digit', month: '2-digit', day: '2-digit', timeZone: 'Asia/Bangkok' }),
+                        "count": args[1],
+                        "receiver_id": user.id
+                    }
+                );
+                account_2.history.push(
+                    {
+                        "date": new Date().toLocaleString('en-US', { year: '2-digit', month: '2-digit', day: '2-digit', timeZone: 'Asia/Bangkok' }),
+                        "count": args[1],
+                        "transferor_id": message.author.id
+                    }
+                );
+
+                await prisma.bank_account.update({
                     where: {
                         discord_id: account_1.discord_id
                     },
@@ -53,7 +68,7 @@ module.exports.run = async (client, message, args) => {
                         ...account_1
                     }
                 });
-                await prisma.user.update({
+                await prisma.bank_account.update({
                     where: {
                         discord_id: account_2.discord_id
                     },
