@@ -56,7 +56,4 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     }
 }
 
-module.exports.config = {
-    name: 'position',
-    aliases: ['pos']
-}
+module.exports.name = ['pos']; 

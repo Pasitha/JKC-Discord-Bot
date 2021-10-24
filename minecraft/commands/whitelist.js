@@ -21,7 +21,4 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     }
 }
 
-module.exports.config = {
-    name: "whitelist",
-    aliases: ['wl', 'w']
-}
+module.exports.name = ['whitelist', 'wl'];
