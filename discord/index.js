@@ -122,11 +122,11 @@ client.on('messageCreate', message => {
     
     const prefix = config.prefix;
 
-	if (message.author.bot || !message.content.startsWith(prefix) || message.channel.type === 'dm') return;
+    if (message.author.bot || !message.content.startsWith(prefix) || message.channel.type === 'dm') return;
 
-	const messageArray = message.content.split(' ');
-	const cmd = messageArray[0];
-	const args = messageArray.slice(1);
+    const messageArray = message.content.split(' ');
+    const cmd = messageArray[0];
+    const args = messageArray.slice(1);
 
     const commandfile = client.commands.get(cmd.slice(prefix.length).toString().toLowerCase());
 	if (commandfile)
