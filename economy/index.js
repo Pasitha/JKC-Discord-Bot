@@ -54,4 +54,3 @@ client.on('messageCreate', message => {
 	if (commandfile)
 		commandfile.run(client, message, args);
 });
-
