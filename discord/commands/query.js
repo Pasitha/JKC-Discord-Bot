@@ -18,8 +18,6 @@ module.exports.run = async (client, message, args) => {
         .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL())
         .setTitle('👱🏻คำสั่งของ JKC Discord Bot (หนูนี้เองง) มีอะไรบ้าง ?').setDescription('ใน Github มีคำสั่งทิ้งหมดของหนูเขียนเอาไว้ให้แล้วค่าาา อ่านในนั้นรู้ทั้ง Code และ คำสั่งเลยนะคะ😅')
 
-
-
     const rowhome = new MessageActionRow()
         .addComponents(
             new MessageButton()
@@ -89,30 +87,26 @@ module.exports.run = async (client, message, args) => {
                 .setDisabled(true),
         );
 
-    msg = await message.channel.send({ embeds: [QAndA_embed], components: [rowhome] });
+    let msg = await message.channel.send({ embeds: [QAndA_embed], components: [rowhome] });
     const collector = message.channel.createMessageComponentCollector({ time: 15000 });
 
     collector.on('collect', async (b) => {
         if (b.customId === 'home_btn') {
             msg.edit({ embeds: [QAndA_embed], components: [rowhome] });
             b.deferUpdate();
-        }
-        if (b.customId === '1') {
+        } else if (b.customId === '1') {
             msg.edit({ embeds: [embed1], components: [row1] });
             b.deferUpdate();
-        }
-        if (b.customId === '2') {
+        } else if (b.customId === '2') {
             msg.edit({ embeds: [embed2], components: [row2] });
             b.deferUpdate();
         }
-
     });
 
     collector.on('end', (collected, reason) => {
         if (reason && reason === `exit`) {
             msg.edit({ components: [] });
-        }
-        if (reason === `time` && collected.size == 0) {
+        } else if (reason === `time` && collected.size == 0) {
             msg.edit({ components: [] });
         }
     });
