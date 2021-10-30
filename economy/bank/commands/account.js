@@ -5,13 +5,13 @@ const prisma = new PrismaClient();
 const config = require('../../../settings.json');
 
 module.exports.run = async (client, message, args) => {
-    let account = await prisma.bank_account.findUnique({
+    let account = await prisma.account.findUnique({
         where: {
             discord_id: message.author.id
         }
     });
     if (!account) {
-        account = await prisma.bank_account.create({
+        account = await prisma.account.create({
             data: {
                 discord_id: message.author.id,
                 discord_name: message.author.username
