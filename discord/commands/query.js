@@ -104,11 +104,10 @@ module.exports.run = async (client, message, args) => {
     });
 
     collector.on('end', (collected, reason) => {
-        if (reason && reason === `exit`) {
+        if (reason && reason === `exit`)
             msg.edit({ components: [] });
-        } else if (reason === `time` && collected.size == 0) {
+        else if (reason === `time` && collected.size == 0)
             msg.edit({ components: [] });
-        }
     });
 }
 
