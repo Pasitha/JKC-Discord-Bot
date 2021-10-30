@@ -15,3 +15,10 @@ model user {
   discord_name String
   coins Int @default(100)
 }
+
+model account {
+  discord_id String @id
+  discord_name String
+  coins Int @default(0)
+  history String @default("[]")
+}
