@@ -18,9 +18,13 @@ const client = new Discord.Client({
         'DIRECT_MESSAGE_TYPING'
     ]
 });
+const fs = require('fs');
 
-const config = require('../setting.json');
+const config = require('../settings.json');
 
+client.commands = new Discord.Collection();
+
+// load discord commands
 ['bank', 'casino'].forEach(dir => {
     fs.readdir(`${dir}/commands`, (err, files) => {
         
@@ -32,14 +36,19 @@ const config = require('../setting.json');
         }
         
         jsfiles.forEach((f, i) => {
-            const module = require(`../commands/${f}`);
+            const modules = require(`./${dir}/commands/${f}`);
             
-            module.config.name.forEach(commandName => {
-                client.commands.set(commandName, module);
+            modules.name.forEach(commandName => {
+                client.commands.set(commandName, modules);
             });
         });
     });
 })
+
+// discord event section
+client.once('ready', () => {
+    console.log('JKC Discord Bot: economy section ready');
+});
 
 client.on('messageCreate', message => { 
     const prefix = config.prefix;
@@ -54,3 +63,5 @@ client.on('messageCreate', message => {
 	if (commandfile)
 		commandfile.run(client, message, args);
 });
+
+client.login(config.token);
