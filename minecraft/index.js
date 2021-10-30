@@ -18,8 +18,15 @@ const client = new Discord.Client({
         "DIRECT_MESSAGE_TYPING"
     ]
 });
+const mineflayer = require('mineflayer');
+const fs = require('fs');
 
 const config = require('../settings.json');
+
+const prefix = config.prefix;
+client.commands = new Discord.Collection();
+let JKCJrBot = mineflayer.createBot(config.minecraftid.JukkyjungJR);
+let JKCSupBot = mineflayer.createBot(config.minecraftid.JukkyjungSUP);
 
 // load commands
 fs.readdir('commands/', (err, files) => {
@@ -32,18 +39,20 @@ fs.readdir('commands/', (err, files) => {
     }
     
     jsfiles.forEach((f, i) => {
-        const module = require(`../commands/${f}`);
+        const modules = require(`./commands/${f}`);
         
-        module.config.name.forEach(commandName => {
-            client.commands.set(commandName, module);
+        modules.name.forEach(commandName => {
+            client.commands.set(commandName, modules);
         });
     });
 });
 
-// discord section
-client.on('messageCreate', message => {
-    const prefix = config.prefix;
+// discord event section
+client.once('ready', () => {
+    console.log('JKC Discord Bot: minecraft section ready');
+});
 
+client.on('messageCreate', message => {
     if (message.author.bot || !message.content.startsWith(prefix) || message.channel.type === 'dm') return;
 
     const messageArray = message.content.split(' ');
@@ -57,14 +66,14 @@ client.on('messageCreate', message => {
 
 client.login(config.token);
 
-// minecraft section
+// mineflayer event section
 const createJKCJrBot = () => {
-    const JKCJrBot = mineflayer.createBot(config.minecraftid.JukkyjungJR);
+    JKCJrBot = mineflayer.createBot(config.minecraftid.JukkyjungJR);
     JKCJrBot.once('spawn', () => {
         console.log('JKC Jr Bot spawn');
     });
   
-    JKCJrBot.on('chat', (username, message) => {
+    JKCJrBot.on('chat', async (username, message) => {
         if (username === JKCJrBot.username || !message.startsWith(prefix)) return;
 
         const messageArray = message.split(' ');
@@ -119,18 +128,18 @@ const createJKCJrBot = () => {
                 break;
         }
     });
-    JKCJrBot.on('error', (err) => console.log('JKC Jr Bot: ', err));
+    // JKCJrBot.on('error', (err) => console.log('JKC Jr Bot: ', err));
     JKCJrBot.on('end', createJKCJrBot);
 }
 createJKCJrBot();
 
 const createJKCSupBot = () => {
-    const JKCSupBot = mineflayer.createBot(config.minecraftid.JukkyjungSUP);
+    JKCSupBot = mineflayer.createBot(config.minecraftid.JukkyjungSUP);
     JKCSupBot.once('spawn', () => {
-        console.log('JKC Jr Bot spawn');
+        console.log('JKC Sup Bot spawn');
     });
   
-    JKCSupBot.on('chat', (username, message) => {
+    JKCSupBot.on('chat', async (username, message) => {
         if (username === JKCSupBot.username || !message.startsWith(prefix)) return;
 
         const messageArray = message.split(' ');
