@@ -19,32 +19,13 @@ const client = new Discord.Client({
     ]
 });
 const fs = require('fs');
-const request = new require('rss-parser');
+const request = new (require('rss-parser'));
 const jsonstringify = require('json-stringify-pretty-compact');
 
 const config = require('../settings.json');
 const jkcData = require('../database/jkc.json');
 
 client.commands = new Discord.Collection();
-
-// load commands
-fs.readdir('commands/', (err, files) => {
-    
-    if (err) console.log(err);
-
-    const jsfiles = files.filter(f => f.split('.').pop() === 'js');
-    if (jsfiles.length <= 0) {
-        return console.log(`Bot Couldn\'t Find Commands in folder ${dir}`);
-    }
-    
-    jsfiles.forEach((f, i) => {
-        const module = require(`../commands/${f}`);
-        
-        module.config.name.forEach(commandName => {
-            client.commands.set(commandName, module);
-        });
-    });
-});
 
 // Youtube update
 setInterval(() => {
@@ -101,25 +82,33 @@ setInterval(() => {
     }
 }, 3600000);
 
+// load discord commands
+fs.readdir('commands/', (err, files) => {
+    if (err) console.log(err);
+
+    const jsfiles = files.filter(f => f.split('.').pop() === 'js');
+    if (jsfiles.length <= 0) {
+        return console.log(`Bot Couldn\'t Find Commands in folder ${dir}`);
+    }
+    
+    jsfiles.forEach((f, i) => {
+        const modules = require(`./commands/${f}`);
+
+        modules.name.forEach(commandName => {
+            client.commands.set(commandName, modules);
+        });
+    });
+});
+
+// discord event section
 client.once('ready', () => {
     client.user.setStatus('idle');
     client.user.setPresence({ activities: [{ name: 'Discord' }], status: 'playing' });
 
-    console.log('JKC Discord Bot is online!');
+    console.log('JKC Discord Bot: discord section ready');
 });
 
 client.on('messageCreate', message => {
-	if (message.content != '') {
-		const web = message.content.match(/\bhttps?:\/\/\S+/gi);
-		if (web) {
-			if (!web.some(urls => [
-                    'www.youtube.com', 'www.facebook.com', 'www.cdn.discord.app', 'github.com', 'www.google.com'
-                ].includes(new URL(urls).hostname))) {
-				return message.delete();
-			}
-		}
-	}
-    
     const prefix = config.prefix;
 
     if (message.author.bot || !message.content.startsWith(prefix) || message.channel.type === 'dm') return;
