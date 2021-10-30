@@ -6,7 +6,7 @@ const config = require('../../../settings.json');
 
 module.exports.run = async (client, message, args) => {
     if (!args[0]) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ คุณอยากลงเดิมพันเท่าไหร่คะ`).setColor('#ff0000')] });
-    let result = /([0-9]+)/.exec("100$");
+    let result = /([0-9]+)/.exec(args[0]);
     if (result[0] !== result.input) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ ที่ใส่มามันไม่ใช่ตัวเลขนะคะ รบกวนใส่ใหม่อีกทีนะคะ`).setColor('#ff0000')] });
     
     const filter = (reaction, user) => {
@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
         });
     }
 
-    if (args[0] > account.coins) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ คุณมีเงินไม่พอนะคะ`).setColor('#ff0000')] });
+    if (parseInt(args[0]) > account.coins) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ คุณมีเงินไม่พอนะคะ`).setColor('#ff0000')] });
     
     let embed = new MessageEmbed().setColor('#FFD157').setThumbnail(client.user.displayAvatarURL())
         .setFooter(client.user.username + ' | Version ' + config.version, client.user.displayAvatarURL());
