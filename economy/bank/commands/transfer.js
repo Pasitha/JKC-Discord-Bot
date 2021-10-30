@@ -5,6 +5,10 @@ const prisma = new PrismaClient();
 const config = require('../../../settings.json');
 
 module.exports.run = async (client, message, args) => {
+    if (!args[0]) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ คุณอยากลงเดิมพันเท่าไหร่คะ`).setColor('#ff0000')] });
+    let result = /([0-9]+)/.exec("100$");
+    if (result[0] !== result.input) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ ที่ใส่มามันไม่ใช่ตัวเลขนะคะ รบกวนใส่ใหม่อีกทีนะคะ`).setColor('#ff0000')] });
+
     let account_1 = await prisma.account.findUnique({
         where: {
             discord_id: message.author.id
