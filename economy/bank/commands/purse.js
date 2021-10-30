@@ -20,11 +20,11 @@ module.exports.run = async (client, message, args) => {
     }
     return message.channel.send({
         embeds: [new MessageEmbed()
-            .setTitle(`🤑กระเต๋าของ ${message.author.username}🤑`)
-            .setDescription(` - ตอนนี้คุณ ${message.author.username} มีเงินอยู่ :dollar: ${account.coins} แหน่ะ`)
+            .setTitle(`🤑กระเป๋าตังของ ${message.author.username}🤑`)
+            .setDescription((account.coins === 0) ? ` - ตอนนี้คุณไม่มีเงินเลยนะคะ ไปทำอะไรมาคะเนี่ย😓` : ` - ตอนนี้คุณมีเงินอยู่ :dollar: ${account.coins} แหน่ะ`)
             .setThumbnail(client.user.displayAvatarURL()).setColor('#FFD156')
             .setFooter(client.user.username + ' | Version ' + config.version, client.user.displayAvatarURL())]
     });
 }
 
-module.exports.name = ['purse'];
+module.exports.name = ['purse', 'money'];
