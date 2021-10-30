@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 const config = require('../../settings.json');
 
-module.exports.run = (client, JKCJrBot, JKCSupBot, message, args) => {
+module.exports.run = (client, message, args) => {
     function editDistance(string1, string2) {
         string1 = string1.toLowerCase();
         string2 = string2.toLowerCase();
@@ -88,7 +88,4 @@ module.exports.run = (client, JKCJrBot, JKCSupBot, message, args) => {
     }
 }
 
-module.exports.config = {
-    name: 'whereis',
-    aliases: ['ws']
-}
+module.exports.name = ['whereis', 'ws'];

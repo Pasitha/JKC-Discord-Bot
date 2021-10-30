@@ -21,7 +21,4 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     }
 }
 
-module.exports.config = {
-    name: 'sendjr',
-    aliases: ['ฝากบอกในเซิฟ']
-}
+module.exports.name = ['sendjr'];

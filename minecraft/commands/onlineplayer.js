@@ -27,7 +27,4 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     }
 }
 
-module.exports.config = {
-    name: "onlineplayer",
-    aliases: ['list', 'online']
-}
+module.exports.name = ['list', 'onlineplayer'];

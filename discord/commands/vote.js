@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 const config = require('../../settings.json');
 
-module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
+module.exports.run = async (client, message, args) => {
     if (!args[0]) return message.channel.send({ embeds: [new MessageEmbed().setAuthor("รบกวนช่วยบอก Titleของpollนี้หน่อยค่ะ")] });
     else if (!args[1]) return message.channel.send({ embeds: [new MessageEmbed().setColor('#ff0000').setAuthor("รบกวนช่วยบอก Description ของ poll นี้ให้หน่อยค่ะ")] });
     else if (!args[2]) return message.channel.send({ embeds: [new MessageEmbed().setColor('#ff0000').setAuthor("รบกวนช่วยบอก Choice ของ poll นี้หน่อยค่ะ")] });
@@ -39,7 +39,4 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     }).catch(function () { /* */ });
 }
 
-module.exports.config = {
-    name: 'vote',
-    aliases: ['poll']
-}
+module.exports.config = ['vote', 'poll'];

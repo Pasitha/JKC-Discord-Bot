@@ -2,16 +2,16 @@ const { MessageEmbed } = require("discord.js");
 const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient();
 
-const config = require('../../settings.json');
+const config = require('../../../settings.json');
 
-module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
-    let account_1 = await prisma.user.findUnique({
+module.exports.run = async (client, message, args) => {
+    let account_1 = await prisma.account.findUnique({
         where: {
             discord_id: message.author.id
         }
     });
     if (!account_1) {
-        account_1 = await prisma.user.create({
+        account_1 = await prisma.account.create({
             data: {
                 discord_id: message.author.id,
                 discord_name: message.author.username
@@ -24,13 +24,13 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
         if (!user || user.id === message.author.id) {
             return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`อยากโดนตังให้ใครหรอคะ บอกหนูหน่อยจิ`).setColor('#ff0000')] });
         } else {
-            let account_2 = await prisma.user.findUnique({
+            let account_2 = await prisma.account.findUnique({
                 where: {
                     discord_id: user.id
                 }
             });
             if (!account_2) {
-                account_2 = await prisma.user.create({
+                account_2 = await prisma.account.create({
                     data: {
                         discord_id: user.id,
                         discord_name: user.username
@@ -44,7 +44,24 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
             if (parseInt(args[1]) <= account_1.coins) {
                 account_1.coins -= parseInt(args[1]);
                 account_2.coins += parseInt(args[1]);
-                await prisma.user.update({
+
+                let account_1_history = JSON.parse(account_1.history);
+                account_1_history.push({
+                    "date": new Date().toLocaleString('en-US', { year: '2-digit', month: '2-digit', day: '2-digit', timeZone: 'Asia/Bangkok' }),
+                    "count": args[1],
+                    "receiver_id": user.id
+                });
+                let account_2_history = JSON.parse(account_2.history);
+                account_2_history.push({
+                    "date": new Date().toLocaleString('en-US', { year: '2-digit', month: '2-digit', day: '2-digit', timeZone: 'Asia/Bangkok' }),
+                    "count": args[1],
+                    "transferor_id": user.id
+                });
+
+                account_1.history = JSON.stringify(account_1_history);
+                account_2.history = JSON.stringify(account_2_history);
+
+                await prisma.account.update({
                     where: {
                         discord_id: account_1.discord_id
                     },
@@ -52,7 +69,7 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
                         ...account_1
                     }
                 });
-                await prisma.user.update({
+                await prisma.account.update({
                     where: {
                         discord_id: account_2.discord_id
                     },
@@ -60,6 +77,7 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
                         ...account_2
                     }
                 });
+
                 return message.channel.send({
                     embeds: [new MessageEmbed().setTitle(`💸โอนเงินสำเร็จค่ะะ💸`).setDescription(`ตอนนี้หนูโอนของ ${message.author.username} ไปให้ ${user.username} เป็นจำนวนเงิน ${args[1]} เรียบร้อยค่ะ💸`)
                         .setThumbnail(client.user.displayAvatarURL()).setColor('#FFD157')
@@ -74,7 +92,5 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     }
 }
 
-module.exports.config = {
-    name: 'pay',
-    aliases: ['give']
-}
+module.exports.name = ['transfer'];
+

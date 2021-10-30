@@ -2,12 +2,12 @@ const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
 
 const config = require('../../settings.json');
 
-module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
+module.exports.run = async (client, message, args) => {
     if (!args[0]) {
         const link = new MessageActionRow()
-            .addComponents(new MessageButton().setURL('https://www.facebook.com/JukucrushTeam?ref=hl').setLabel('Fackbook').setStyle('LINK'))
-            .addComponents(new MessageButton().setURL('https://www.youtube.com/channel/UC-lNawOSpzmBSO-IqKImcfw').setLabel('Youtube').setStyle('LINK'))
-            .addComponents(new MessageButton().setURL('https://github.com/opecgame/JKC-Discord-Bot').setLabel('Github').setStyle('LINK'));
+            .addComponents(new MessageButton().setURL('https://www.facebook.com/JukucrushTeam?ref=hl').setLabel('Facebook').setStyle('LINK'))
+            .addComponents(new MessageButton().setURL('https://www.youtube.com/channel/UC-lNawOSpzmBSO-IqKImcfw').setLabel('YouTube').setStyle('LINK'))
+            .addComponents(new MessageButton().setURL('https://github.com/opecgame/JKC-Discord-Bot').setLabel('GitHub').setStyle('LINK'));
 
         const embedjkcinfo = new MessageEmbed()
             .setThumbnail(client.user.displayAvatarURL()).setColor('#FFD157')
@@ -43,7 +43,4 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     }
 }
 
-module.exports.config = {
-    name: 'jkc',
-    aliases: ['jukucrush']
-}
+module.exports.name = ['jkc', 'jukucrush'];

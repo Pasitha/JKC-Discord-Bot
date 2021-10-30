@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const axios = require('axios').default
 
-module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
+module.exports.run = async (client, message, args) => {
     if (!args[0]) return message.channel.send({ embeds: [new MessageEmbed().setAuthor("อยากได้หัวใครช่วยบอกหนูหน่อยนะคะ").setColor('#ff0000')] });
     const { id: identifier } = (await axios.get(`https://api.mojang.com/users/profiles/minecraft/${args[0]}`)).data
     try {
@@ -11,7 +11,4 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
     }
 }
 
-module.exports.config = {
-    name: "mchead",
-    aliases: ['minecrafthead']
-}
+module.exports.name = ['mchead'];
