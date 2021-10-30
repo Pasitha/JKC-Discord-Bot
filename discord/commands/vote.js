@@ -39,4 +39,4 @@ module.exports.run = async (client, message, args) => {
     }).catch(function () { /* */ });
 }
 
-module.exports.config = ['vote', 'poll'];
+module.exports.name = ['vote', 'poll'];
