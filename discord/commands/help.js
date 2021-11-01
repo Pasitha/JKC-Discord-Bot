@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
     let discordCommands = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL()).setURL('https://github.com/Pasitha/JKC-Discord-Bot')
         .setTitle('คำสั่งทั้งหมดของ JKC\'s Discord Bot').setDescription('ก่อนใช้ทุกคำสั่งใช้ให้พิมพ์นำหน้าด้วย \`$\` แล้วตามด้วยชื่อคำสั่งได้เลย')
         .addFields(
-            { name: ' - \`$info\`', value: 'ใช้สำหรับบอกข้อมูลต่าง ๆ ของผู้ใช้โดยสามารถใช้ได้โดย \`$info @ผู้ใช้\`' },
+            { name: ' - \`$info\`', value: 'ใช้สำหรับบอกข้อมูลต่าง ๆ ของผู้ใช้\nโดยสามารถใช้ได้โดย \`$info @ผู้ใช้\`' },
             { name: ' - \`$jkc\`', value: ' -> \`$jkc\`ใช้สำหรับบอกข้อมูลของทีม JKC ช่องทางการติดต่อต่าง ๆ\n -> \`$jkc ดูไรดี\` ใช้สำหรับสุ่มคลิปจาก Jukucrush team มาให้รับชมกัน' },
             { name: ' - \`$mchead\`', value: 'ใช้สำหรับดูว่าหัวของ skin คนนั้น ๆ \nสามารถบอกคนที่ต้องการหาได้โดย \`$mchead MINECRAFT_NAME\`' },
             { name: ' - \`$mcskin\`', value: 'ใช้สำหรับดู skin คนนั้น ๆ \nสามารถบอกคนที่ต้องการหาได้โดย \`$mchead MINECRAFT_NAME\`' },
@@ -21,6 +21,7 @@ module.exports.run = async (client, message, args) => {
         .addFields(
             { name: ' - \`$position\`', value: 'ใช้ถามหาว่าภายในเซิฟ JKC Jr.5 ผู้เล่นคนนี้อยู่ที่พิกัดอะไร ตัวอย่างเช่น \`$position Pasitha\`\n(ตัวเล็กตัวใหญ่มีผลต่อชื่อเด้อ)' },
             { name: ' - \`$onlineplayer\`', value: 'ใช้สำหรับบอกว่าในเซิฟ JKC Jr.5 มีผู้เล่นอะไรที่ online อยู่บ้าง' },
+            { name: ' - \`$\`', value: 'ใช้สำหรับบอกว่าในเซิฟ JKC Jr.5 มีผู้เล่นอะไรที่ online อยู่บ้าง' },
         )
         .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL());
 
@@ -39,7 +40,7 @@ module.exports.run = async (client, message, args) => {
         .addComponents(
             new MessageButton()
                 .setCustomId('home_btn')
-                .setLabel('คำสั่งทั่วไป')
+                .setLabel('คำสั่ง Discord')
                 .setStyle('PRIMARY')
                 .setEmoji('⌨️')
                 .setDisabled(true),
@@ -47,27 +48,65 @@ module.exports.run = async (client, message, args) => {
         .addComponents(
             new MessageButton()
                 .setCustomId('1')
-                .setLabel('คำสั่งเพิ่มเติม')
+                .setLabel('คำสั่ง Minecraft')
                 .setStyle('SECONDARY')
                 .setEmoji('1️⃣'),
         )
+        .addComponents(
+            new MessageButton()
+                .setCustomId('2')
+                .setLabel('คำสั่ง Economy')
+                .setStyle('SECONDARY')
+                .setEmoji('2️⃣'),
+        );
 
     const row1 = new MessageActionRow()
         .addComponents(
             new MessageButton()
                 .setCustomId('home_btn')
-                .setLabel('หน้าแรก')
+                .setLabel('คำสั่ง Discord')
                 .setStyle('PRIMARY')
-                .setEmoji('⌨️'),
+                .setEmoji('⌨️')
         )
         .addComponents(
             new MessageButton()
                 .setCustomId('1')
-                .setLabel('คำสั่งเพิ่มเติม')
+                .setLabel('คำสั่ง Minecraft')
                 .setStyle('SECONDARY')
                 .setEmoji('1️⃣')
                 .setDisabled(true),
         )
+        .addComponents(
+            new MessageButton()
+                .setCustomId('2')
+                .setLabel('คำสั่ง Economy')
+                .setStyle('SECONDARY')
+                .setEmoji('2️⃣'),
+        );
+
+    const row2 = new MessageActionRow()
+        .addComponents(
+            new MessageButton()
+                .setCustomId('home_btn')
+                .setLabel('คำสั่ง Discord')
+                .setStyle('PRIMARY')
+                .setEmoji('⌨️')
+        )
+        .addComponents(
+            new MessageButton()
+                .setCustomId('1')
+                .setLabel('คำสั่ง Minecraft')
+                .setStyle('SECONDARY')
+                .setEmoji('1️⃣')
+        )
+        .addComponents(
+            new MessageButton()
+                .setCustomId('2')
+                .setLabel('คำสั่ง Economy')
+                .setStyle('SECONDARY')
+                .setEmoji('2️⃣')
+                .setDisabled(true),
+        );
 
     msg = await message.channel.send({ embeds: [discordCommands], components: [rowhome] });
     const collector = message.channel.createMessageComponentCollector({ time: 15000 });
@@ -79,9 +118,11 @@ module.exports.run = async (client, message, args) => {
         if (b.customId === 'home_btn') {
             msg.edit({ embeds: [discordCommands], components: [rowhome] });
             b.deferUpdate();
-        }
-        if (b.customId === '1') {
+        } else if (b.customId === '1') {
             msg.edit({ embeds: [minecraftCommands], components: [row1] });
+            b.deferUpdate();
+        } else if (b.customId === '2') {
+            msg.edit({ embeds: [economyCommands], components: [row2] });
             b.deferUpdate();
         }
     });
