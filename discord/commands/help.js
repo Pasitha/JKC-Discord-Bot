@@ -3,7 +3,7 @@ const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
 const config = require('../../settings.json');
 
 module.exports.run = async (client, message, args) => {
-    let commonhelpEmbed = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL()).setURL('https://github.com/Pasitha/JKC-Discord-Bot')
+    let discordCommands = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL()).setURL('https://github.com/Pasitha/JKC-Discord-Bot')
         .setTitle('คำสั่งทั้งหมดของ JKC\'s Discord Bot').setDescription('ก่อนใช้ทุกคำสั่งใช้ให้พิมพ์นำหน้าด้วย \`$\` แล้วตามด้วยชื่อคำสั่งได้เลย')
         .addFields(
             { name: ' - \`$info\`', value: 'ใช้สำหรับบอกข้อมูลต่าง ๆ ของผู้ใช้โดยสามารถใช้ได้โดย \`$info @ผู้ใช้\`' },
@@ -16,11 +16,22 @@ module.exports.run = async (client, message, args) => {
         )
         .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL());
 
-    let jkcCommandEmbed = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL()).setURL('https://github.com/Pasitha/JKC-Discord-Bot')
+    let minecraftCommands = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL()).setURL('https://github.com/Pasitha/JKC-Discord-Bot')
         .setTitle('คำสั่งเพิ่มเติมของ JKC\'s Discord Bot').setDescription('ก่อนใช้ทุกคำสั่งใช้ให้พิมพ์นำหน้าด้วย \`$\` แล้วตามด้วยชื่อคำสั่งได้เลย')
         .addFields(
             { name: ' - \`$position\`', value: 'ใช้ถามหาว่าภายในเซิฟ JKC Jr.5 ผู้เล่นคนนี้อยู่ที่พิกัดอะไร ตัวอย่างเช่น \`$position Pasitha\`\n(ตัวเล็กตัวใหญ่มีผลต่อชื่อเด้อ)' },
             { name: ' - \`$onlineplayer\`', value: 'ใช้สำหรับบอกว่าในเซิฟ JKC Jr.5 มีผู้เล่นอะไรที่ online อยู่บ้าง' },
+        )
+        .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL());
+
+    let economyCommands = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL()).setURL('https://github.com/Pasitha/JKC-Discord-Bot')
+        .setTitle('คำสั่งเพิ่มเติมของ JKC\'s Discord Bot').setDescription('ก่อนใช้ทุกคำสั่งใช้ให้พิมพ์นำหน้าด้วย \`$\` แล้วตามด้วยชื่อคำสั่งได้เลย')
+        .addFields(
+            { name: ' - \`$purse\`', value: 'ใช้สำหรับเช็คเงินในกระเป๋าตังว่ามีเงินอยู่เท่าไหร่' },
+            { name: ' - \`$account\`', value: 'ใช้สำหรับเช็คว่าในบัญชีธนาคารมีเงินฝากอยู่เท่าไหร่' },
+            { name: ' - \`$deposit\`', value: 'ใช้สำหรับฝากเงินเข้าธนาคาร' },
+            { name: ' - \`$withdraw\`', value: 'ใช้สำหรับถอนเงินออกจากธนาคาร' },
+            { name: ' - \`$transfer\`', value: 'ใช้สำหรับโอนเงินจากบัญชีนึงไปอีกบัญชีนึง\nตัวอย่างเช่น `$transfer @pasitha 50` จะเป็นการโอนเงิน' },
         )
         .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL());
 
@@ -58,7 +69,7 @@ module.exports.run = async (client, message, args) => {
                 .setDisabled(true),
         )
 
-    msg = await message.channel.send({ embeds: [commonhelpEmbed], components: [rowhome] });
+    msg = await message.channel.send({ embeds: [discordCommands], components: [rowhome] });
     const collector = message.channel.createMessageComponentCollector({ time: 15000 });
 
     let authorID = message.author.id;
@@ -66,11 +77,11 @@ module.exports.run = async (client, message, args) => {
     collector.on('collect', async (b) => {
         if (authorID != message.author.id) return;
         if (b.customId === 'home_btn') {
-            msg.edit({ embeds: [commonhelpEmbed], components: [rowhome] });
+            msg.edit({ embeds: [discordCommands], components: [rowhome] });
             b.deferUpdate();
         }
         if (b.customId === '1') {
-            msg.edit({ embeds: [jkcCommandEmbed], components: [row1] });
+            msg.edit({ embeds: [minecraftCommands], components: [row1] });
             b.deferUpdate();
         }
     });
