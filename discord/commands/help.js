@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args) => {
         .addFields(
             { name: ' - \`$position\`', value: 'ใช้ถามหาว่าภายในเซิฟ JKC Jr.5 ผู้เล่นคนนี้อยู่ที่พิกัดอะไร ตัวอย่างเช่น \`$position Pasitha\`\n(ตัวเล็กตัวใหญ่มีผลต่อชื่อเด้อ)' },
             { name: ' - \`$onlineplayer\`', value: 'ใช้สำหรับบอกว่าในเซิฟ JKC Jr.5 มีผู้เล่นอะไรที่ online อยู่บ้าง' },
-            { name: ' - \`$\`', value: 'ใช้สำหรับบอกว่าในเซิฟ JKC Jr.5 มีผู้เล่นอะไรที่ online อยู่บ้าง' },
+            { name: ' - \`$sendjr\`', value: 'ใช้สำหรับพิมพ์ข้อความเพื่อพูดคุยกับคนภายในเซิฟ JKC Jr.5' },
         )
         .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL());
 
