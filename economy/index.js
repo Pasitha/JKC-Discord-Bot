@@ -26,6 +26,7 @@ const config = require('../settings.json');
 
 client.commands = new Discord.Collection();
 
+// interest system
 setInterval(async () => {
     await prisma.$executeRaw`UPDATE user SET coins = coins*1.1 WHERE coins > 50000`;
     await prisma.$executeRaw`UPDATE user SET coins = coins*1.2 WHERE coins < 50000`;
