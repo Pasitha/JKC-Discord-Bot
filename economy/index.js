@@ -19,10 +19,18 @@ const client = new Discord.Client({
     ]
 });
 const fs = require('fs');
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 
 const config = require('../settings.json');
 
 client.commands = new Discord.Collection();
+
+setInterval(async () => {
+    await prisma.$executeRaw`UPDATE user SET coins = coins*1.1 WHERE coins > 50000`;
+    await prisma.$executeRaw`UPDATE user SET coins = coins*1.2 WHERE coins < 50000`;
+    await prisma.$executeRaw`UPDATE user SET coins = coins*1.3 WHERE coins < 10000`;
+}, 259200000);
 
 // load discord commands
 ['bank', 'casino'].forEach(dir => {
