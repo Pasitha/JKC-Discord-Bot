@@ -9,13 +9,13 @@
       "host": "<server ip>",
       "username": "<email>",
       "password": "<password>",
-      "auth": "mojang",
+      "auth": "mojang"
     },
     "JukkyjungSUP": {
       "host": "<server ip>",
       "username": "<email>",
       "password": "<password>",
-      "auth": "mojang",
+      "auth": "mojang"
     }
   }
 }
