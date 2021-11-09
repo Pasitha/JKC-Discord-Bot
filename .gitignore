@@ -1,4 +1,4 @@
 /node_modules
 package-lock.json
-launcher_accounts.json
+/minecraft/launcher_accounts.json
 settings.json
