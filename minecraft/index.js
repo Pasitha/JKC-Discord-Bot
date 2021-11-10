@@ -25,8 +25,6 @@ const config = require('../settings.json');
 
 const prefix = config.prefix;
 client.commands = new Discord.Collection();
-let JKCJrBot = mineflayer.createBot(config.minecraftid.JukkyjungJR);
-let JKCSupBot = mineflayer.createBot(config.minecraftid.JukkyjungSUP);
 
 // load commands
 fs.readdir('commands/', (err, files) => {
@@ -68,7 +66,7 @@ client.login(config.token);
 
 // mineflayer event section
 const createJKCJrBot = () => {
-    JKCJrBot = mineflayer.createBot(config.minecraftid.JukkyjungJR);
+    let JKCJrBot = mineflayer.createBot(config.minecraftid.JukkyjungJR);
     JKCJrBot.once('spawn', () => {
         console.log('JKC Jr Bot spawn');
     });
@@ -128,13 +126,13 @@ const createJKCJrBot = () => {
                 break;
         }
     });
-    // JKCJrBot.on('error', (err) => console.log('JKC Jr Bot: ', err));
+    JKCJrBot.on('error', (err) => console.log('JKC Jr Bot: ', err));
     JKCJrBot.on('end', createJKCJrBot);
 }
 createJKCJrBot();
 
 const createJKCSupBot = () => {
-    JKCSupBot = mineflayer.createBot(config.minecraftid.JukkyjungSUP);
+    let JKCSupBot = mineflayer.createBot(config.minecraftid.JukkyjungSUP);
     JKCSupBot.once('spawn', () => {
         console.log('JKC Sup Bot spawn');
     });
