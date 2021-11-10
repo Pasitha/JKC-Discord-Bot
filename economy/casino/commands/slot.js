@@ -47,9 +47,13 @@ module.exports.run = async (client, message, args) => {
                 const slot2 = Math.floor(Math.random()*10) + 1;
                 const slot3 = Math.floor(Math.random()*10) + 1;
 
-                const first_slot_wheel = await canvas.loadImage(`../picture/jkc-casino/slot-wheel/${slot1}`)
-                const second_slot_wheel = await canvas.loadImage(`../picture/jkc-casino/slot-wheel/${slot2}`)
-                const third_slot_wheel = await canvas.loadImage(`../picture/jkc-casino/slot-wheel/${slot3}`)
+                const first_slot_wheel = await canvas.loadImage(`../picture/jkc-casino/slot-wheel/${slot1}`);
+                const second_slot_wheel = await canvas.loadImage(`../picture/jkc-casino/slot-wheel/${slot2}`);
+                const third_slot_wheel = await canvas.loadImage(`../picture/jkc-casino/slot-wheel/${slot3}`);
+
+                context.drawImage(first_slot_wheel, 20, 20, 250, 250);
+                context.drawImage(second_slot_wheel, 20, 20, 250, 250);
+                context.drawImage(third_slot_wheel, 20, 20, 250, 250);
             }
         });
     }
