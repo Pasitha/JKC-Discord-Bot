@@ -26,6 +26,9 @@ const config = require('../settings.json');
 const prefix = config.prefix;
 client.commands = new Discord.Collection();
 
+let JKCJrBot = mineflayer.createBot(config.minecraftid.JukkyjungJR);
+let JKCSupBot = mineflayer.createBot(config.minecraftid.JukkyjungSUP);
+
 // load commands
 fs.readdir('commands/', (err, files) => {
     
