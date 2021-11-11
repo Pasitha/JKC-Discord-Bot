@@ -44,17 +44,7 @@ Discord bot for <b>Jukucrush's Official Discord Server</b>
 				"password": "thisisPasithapassword",
 				"auth": "microsoft",
 				"version": false,
-				"plugins": {},
-				"hideErrors": true,
-				"logErrors": true,
-				"loadInternalPlugins": true,
-				"client": null,
-				"brand": "vanilla",
-				"majorVersion": "1.17",
-				"protocolVersion": 756,
-				"port": 25565,
-				"closeTimeout": 120000,
-				"noPongTimeout": 5000
+				"port": 25565
     		}
  		}
 	}
