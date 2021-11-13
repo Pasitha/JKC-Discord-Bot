@@ -38,7 +38,7 @@ module.exports.run = async (client, message, args) => {
                 const canvas = Canvas.createCanvas(960, 540);
                 const context = canvas.getContext('2d');
 
-                const background = await canvas.loadImage('../picture/jkc-casino/slot-wheel/background.png');
+                const background = await canvas.loadImage('../picture/jkc-casino/slot/JKC_discordSlot_matchine.png');
 
                 context.drawImage(background, 0, 0, canvas.width, canvas.height);
                 context.strokeRect(0, 0, canvas.width, canvas.height);
