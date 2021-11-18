@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
         .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL());
 
     let minecraftCommands = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL()).setURL('https://github.com/Pasitha/JKC-Discord-Bot')
-        .setTitle('คำสั่งเพิ่มเติมของ JKC\'s Discord Bot').setDescription('ก่อนใช้ทุกคำสั่งใช้ให้พิมพ์นำหน้าด้วย \`$\` แล้วตามด้วยชื่อคำสั่งได้เลย')
+        .setTitle('คำสั่งของ Jukkyjung').setDescription('ก่อนใช้ทุกคำสั่งใช้ให้พิมพ์นำหน้าด้วย \`$\` แล้วตามด้วยชื่อคำสั่งได้เลย')
         .addFields(
             { name: ' - \`$position\`', value: 'ใช้ถามหาว่าภายในเซิฟ JKC Jr.5 ผู้เล่นคนนี้อยู่ที่พิกัดอะไร ตัวอย่างเช่น \`$position Pasitha\`\n(ตัวเล็กตัวใหญ่มีผลต่อชื่อเด้อ)' },
             { name: ' - \`$onlineplayer\`', value: 'ใช้สำหรับบอกว่าในเซิฟ JKC Jr.5 มีผู้เล่นอะไรที่ online อยู่บ้าง' },
@@ -26,13 +26,18 @@ module.exports.run = async (client, message, args) => {
         .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL());
 
     let economyCommands = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL()).setURL('https://github.com/Pasitha/JKC-Discord-Bot')
-        .setTitle('คำสั่งเพิ่มเติมของ JKC\'s Discord Bot').setDescription('ก่อนใช้ทุกคำสั่งใช้ให้พิมพ์นำหน้าด้วย \`$\` แล้วตามด้วยชื่อคำสั่งได้เลย')
+        .setTitle('คำสั่งเกี่ยวกับ JKC coins').setDescription('ก่อนใช้ทุกคำสั่งใช้ให้พิมพ์นำหน้าด้วย \`$\` แล้วตามด้วยชื่อคำสั่งได้เลย')
         .addFields(
+            { name: '\u200b', value: '**คำสั่งธนาคาร**'},
             { name: ' - \`$purse\`', value: 'ใช้สำหรับเช็คเงินในกระเป๋าตังว่ามีเงินอยู่เท่าไหร่' },
             { name: ' - \`$account\`', value: 'ใช้สำหรับเช็คว่าในบัญชีธนาคารมีเงินฝากอยู่เท่าไหร่' },
             { name: ' - \`$deposit\`', value: 'ใช้สำหรับฝากเงินเข้าธนาคาร' },
             { name: ' - \`$withdraw\`', value: 'ใช้สำหรับถอนเงินออกจากธนาคาร' },
             { name: ' - \`$transfer\`', value: 'ใช้สำหรับโอนเงินจากบัญชีนึงไปอีกบัญชีนึง\nตัวอย่างเช่น `$transfer @pasitha 50` จะเป็นการโอนเงิน' },
+            { name: '\u200b', value: '**คำสั่งคาสิโน**'},
+            { name: ' - \`$hailoo\`', value: 'ใช้สำหรับการเล่น hailoo โดยการพิมพ์ \`$hailoo เงินเดิมพัน\`'},
+            { name: ' - \`$slot\`', value: 'ใช้สำหรับการเล่น slot matchine สามารถเล่นได้\nโดยการพิมพ์ \`$slot\` จากนั้นทำการเลือกตู้ที่อยากเล่นและรุ้นรางวัลได้เลย'},
+
         )
         .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL());
 
