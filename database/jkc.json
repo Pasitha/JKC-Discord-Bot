@@ -1,6 +1,16 @@
 {
   "member": [
     {
+      "birthDay": "",
+      "youtube": {
+        "channelName": "JKC Team",
+        "lastVideoUpdate": [
+
+        ]
+      },
+      "allowUpdate": true
+    },
+    {
       "birthDay": "07/02/1999",
       "youtube": {
         "channelName": "BossNiti",
