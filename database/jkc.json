@@ -3,9 +3,13 @@
     {
       "birthDay": "",
       "youtube": {
-        "channelName": "JKC Team", 
+        "channelName": "JKC Team",
         "channelId": "UC-lNawOSpzmBSO-IqKImcfw",
-        "lastVideoUpdate": []
+        "lastVideoUpdate": [
+          "https://www.youtube.com/watch?v=3P0yQZeejdc",
+          "https://www.youtube.com/watch?v=_ySKDh7uRzU",
+          "https://www.youtube.com/watch?v=qekLqy033uk"
+        ]
       },
       "allowUpdate": true
     },
