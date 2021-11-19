@@ -63,24 +63,17 @@ setInterval(() => {
 setInterval(() => {
     const todayStr = new Date().toLocaleString('en-US', { year: '2-digit', month: '2-digit', day: '2-digit', timeZone: 'Asia/Bangkok' }).slice(0, 5);
 
-    if (config.lastrun !== todayStr) {
-        config.lastrun = todayStr;
-        fs.writeFile('../settings.json', jsonstringify(config), (err) => {
-            if (err) throw err;
-        });
+    for (let i = 0; i < jkcData.member.length; i++) {
+        if (jkcData.member[i].birthDay.slice(0, 5) === todayStr) {
+            const HBDEmbed = new Discord.MessageEmbed()
+                .setThumbnail(client.user.displayAvatarURL()).setColor("#FFD157")
+                .setTitle(`🎂🎂🎂 สุขสันต์วันเกิดนะคะ 🥂 ${require('../jkc.json').member[0].youtube.channelName} 🎂🎂🎂`)
+                .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL());
 
-        for (let i = 0; i < jkcData.member.length; i++) {
-            if (jkcData.member[i].birthDay.slice(0, 5) === todayStr) {
-                const HBDEmbed = new MessageEmbed()
-                    .setThumbnail(client.user.displayAvatarURL()).setColor("#FFD157")
-                    .setTitle(`🎂🎂🎂 สุขสันต์วันเกิดนะคะ 🥂 ${require('../jkc.json').member[0].youtube.channelName} 🎂🎂🎂`)
-                    .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL());
-
-                return client.channels.cache.get("552889042878857227").send({ embeds: [HBDEmbed] });
-            }
+            return client.channels.cache.get("552889042878857227").send({ embeds: [HBDEmbed] });
         }
     }
-}, 3600000);
+}, 86400000);
 
 // load discord commands
 fs.readdir('commands/', (err, files) => {
