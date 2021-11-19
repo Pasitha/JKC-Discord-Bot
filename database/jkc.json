@@ -3,10 +3,9 @@
     {
       "birthDay": "",
       "youtube": {
-        "channelName": "JKC Team",
-        "lastVideoUpdate": [
-
-        ]
+        "channelName": "JKC Team", 
+        "channelId": "UC-lNawOSpzmBSO-IqKImcfw",
+        "lastVideoUpdate": []
       },
       "allowUpdate": true
     },
@@ -120,9 +119,9 @@
         "channelName": "GucciGuy",
         "channelId": "UC1VzAZISuwQ-lwb-oHWhvmQ",
         "lastVideoUpdate": [
+          "https://www.youtube.com/watch?v=DVJ7xFlURxU",
           "https://www.youtube.com/watch?v=aKIe175fmxE",
-          "https://www.youtube.com/watch?v=c4ikrEndJS0",
-          "https://www.youtube.com/watch?v=YC4mTDIXZCg"
+          "https://www.youtube.com/watch?v=c4ikrEndJS0"
         ]
       },
       "allowUpdate": true
