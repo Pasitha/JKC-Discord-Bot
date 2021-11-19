@@ -69,7 +69,7 @@ client.login(config.token);
 
 // mineflayer event section
 const createJKCJrBot = () => {
-    let JKCJrBot = mineflayer.createBot(config.minecraftid.JukkyjungJR);
+    JKCJrBot = mineflayer.createBot(config.minecraftid.JukkyjungJR);
     JKCJrBot.once('spawn', () => {
         console.log('JKC Jr Bot spawn');
     });
@@ -103,8 +103,8 @@ const createJKCJrBot = () => {
             case 'pos': case 'position':
                 if (!args[0]) return JKCJrBot.chat(`ตอนนี้ ${JKCJrBot.username} อยู่ที่ x : ${JKCJrBot.entity.position.x.toFixed(2)}, y : ${JKCJrBot.entity.position.y.toFixed(2)}, z : ${JKCJrBot.entity.position.z.toFixed(2)}`);
 
-                JKCJrBot.chat(`/tp Jukkyjung ${args[0]}`);
                 if (!Object.keys(JKCJrBot.players).includes(args[0])) return JKCJrBot.chat(`ตอนนี้ในเซิฟไม่มีคนที่ชื่อ ${args[0]} อยู่ในเซิฟนะคะ`);
+                JKCJrBot.chat(`/tp Jukkyjung ${args[0]}`);
 
                 await new Promise(resolve => setTimeout(resolve, 50));
                 await JKCJrBot.waitForChunksToLoad();
@@ -127,6 +127,28 @@ const createJKCJrBot = () => {
                     return sentence;
                 }).join(' ')}`);
                 break;
+            case 'trans': case 'transfer': case 'pay':
+                if (!args[0]) return JKCJrBot.chat('รบกวนบอกหนูหน่อยนะคะว่าจะโยนให้ใคร');
+                if (!Object.keys(JKCJrBot.players).includes(args[0])) return JKCJrBot.chat(`หนูไม่เจอผู้เล่นที่ชื่อ ${args[0]} เลยนะคะ`);
+                if (!args[1]) return JKCJrBot.chat(`รบกวนบอกหนูหน่อยนะคะว่าจะโยนให้ ${args[0]} เท่าไหร่`);
+                if (isNaN(args[1])) return JKCJrBot.chat('เอิ่ม...นี้มันไม่ใช่ตัวเลขไม่ใช่หรอคะ');
+
+                JKCJrBot.chat(`/tp Jukkyjung ${username}`);
+
+                await new Promise(resolve => setTimeout(resolve, 50));
+                await JKCJrBot.waitForChunksToLoad();
+
+                if (JKCJrBot.players[username].entity.heldItem.name === "diamond") {
+                    if (JKCJrBot.players[username].entity.heldItem.count >= Math.floor(parseInt(args[1]))) {
+                        JKCJrBot.chat(`/clear ${username} minecraft:diamond ${args[1]}`);
+                        JKCJrBot.chat(`/give ${args[0]} minecraft:diamond ${args[1]}`);
+                    } else {
+                        JKCJrBot.chat('มีเพขรไม่พอนะคะ');
+                    }
+                } else {
+                    JKCJrBot.chat('รบกวนถือเพชรไว้ในมือหน่อยนะคะ');
+                }
+                break;
         }
     });
     JKCJrBot.on('error', (err) => console.log('JKC Jr Bot: ', err));
@@ -135,7 +157,7 @@ const createJKCJrBot = () => {
 createJKCJrBot();
 
 const createJKCSupBot = () => {
-    let JKCSupBot = mineflayer.createBot(config.minecraftid.JukkyjungSUP);
+    JKCSupBot = mineflayer.createBot(config.minecraftid.JukkyjungSUP);
     JKCSupBot.once('spawn', () => {
         console.log('JKC Sup Bot spawn');
     });
