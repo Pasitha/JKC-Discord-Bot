@@ -8,7 +8,6 @@ module.exports.run = async (client, message, args) => {
     if (!args[0]) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ คุณอยากลงเดิมพันเท่าไหร่คะ`).setColor('#ff0000')] });
     let result = /([0-9]+)/.exec(args[0]);
     if (result[0] !== result.input) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ ที่ใส่มามันไม่ใช่ตัวเลขนะคะ รบกวนใส่ใหม่อีกทีนะคะ`).setColor('#ff0000')] });
-    if (args[0] > 1000) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`😔เอ่ออ คุณ${message.author.username} คะ พอดีว่าเราให้ลงเดิมันได้ไม่เกิน 1000 JKC Coins เท่านั้นนะคะ`).setColor('#ff0000')] });
     
     let account = await prisma.user.findUnique({
         where: {
@@ -23,7 +22,9 @@ module.exports.run = async (client, message, args) => {
             }
         });
     }
-
+    
+    if (parseInt(args[0]) === 0) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🥱เอ่ออ คุณ${message.author.username} คะ เล่น 0 JKC Coins หมมายความว่ายังไงคะ`).setColor('#ff0000')] });
+    if (parseInt(args[0]) > 1000) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`😔เอ่ออ คุณ${message.author.username} คะ พอดีว่าเราให้ลงเดิมันได้ไม่เกิน 1000 JKC Coins เท่านั้นนะคะ`).setColor('#ff0000')] });
     if (parseInt(args[0]) > account.coins) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ คุณมีเงินไม่พอนะคะ`).setColor('#ff0000')] });
     
     let embed = new MessageEmbed().setColor('#FFD157').setThumbnail(client.user.displayAvatarURL())
