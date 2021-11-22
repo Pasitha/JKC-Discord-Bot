@@ -61,6 +61,12 @@ module.exports.run = async (client, message, args) => {
                 message.channel.send({ files: [attach] });
                 if (slot1 === slot2 && slot2 === slot3) {
                     account.coins += 100 * slot1;
+
+                    message.channel.send({embeds: [
+                        new MessageEmbed().setTitle('ping ของหนู').setColor('#FFD157').setThumbnail(client.user.displayAvatarURL())
+                            .addField(`🏓Latencyของหนู ตอนนี้อยู่ที่ประมาณ`, `\`${msg.createdTimestamp - message.createdTimestamp}มิลลิวินาที(ms)\``).addField(`🏓ส่วนของAPI Latency อยู่ที่ประมาณ`, `\`${Math.round(client.ws.ping)}มิลลิวินาที(ms)\``)
+                            .setFooter(client.user.username + ' | Version ' + config.version, client.user.displayAvatarURL())
+                    ]})
                 }
                 await prisma.user.update({
                     where: {
