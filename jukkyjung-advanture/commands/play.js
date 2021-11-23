@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
     const jukkyjung = await Canvas.loadImage(`../picture/jukkyjung-andavture/jukkyjung.png`);
 
     context.drawImage(background, 0, 0, canvas.width, canvas.height);
-    context.drawImage(jukkyjungm, 50, 0, 900, 900);
+    context.drawImage(jukkyjung, 50, 0, 900, 900);
 
     const attachment = new MessageAttachment(canvas.toBuffer(), 'game.png');
 
