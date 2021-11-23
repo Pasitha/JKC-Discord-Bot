@@ -34,7 +34,7 @@ module.exports.run = async (client, message, args) => {
         collector.on('collect', async (reaction, user) => {
             if (reaction.emoji.name === '1️⃣') {
                 msg.delete();
-                account.coins -= 10;
+                account.coins -= 100;
                 
                 const canvas = Canvas.createCanvas(960, 540);
                 const context = canvas.getContext('2d');
@@ -60,7 +60,7 @@ module.exports.run = async (client, message, args) => {
 
                 message.channel.send({ files: [attach] });
                 if (slot1 === slot2 && slot2 === slot3) {
-                    account.coins += 100 * slot1;
+                    account.coins += 1000 * slot1;
 
                     message.channel.send({embeds: [
                         new MessageEmbed().setTitle('ping ของหนู').setColor('#FFD157').setThumbnail(client.user.displayAvatarURL())
