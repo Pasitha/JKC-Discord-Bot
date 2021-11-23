@@ -63,8 +63,8 @@ module.exports.run = async (client, message, args) => {
                     account.coins += 1000 * slot1;
 
                     message.channel.send({embeds: [
-                        new MessageEmbed().setTitle('ping ของหนู').setColor('#FFD157').setThumbnail(client.user.displayAvatarURL())
-                            .addField(`🏓Latencyของหนู ตอนนี้อยู่ที่ประมาณ`, `\`${msg.createdTimestamp - message.createdTimestamp}มิลลิวินาที(ms)\``).addField(`🏓ส่วนของAPI Latency อยู่ที่ประมาณ`, `\`${Math.round(client.ws.ping)}มิลลิวินาที(ms)\``)
+                        new MessageEmbed().setTitle('ยินดีด้วยคุณชนะ').setColor('#FFD157').setThumbnail(client.user.displayAvatarURL())
+                            .addField(`และนี้คือรางวัลของคุณค่ะ`, `เป็นจำนวนเงินทั้งสิ้น ${1000 * slot1} JKC Coins ค่ะ`)
                             .setFooter(client.user.username + ' | Version ' + config.version, client.user.displayAvatarURL())
                     ]})
                 }
