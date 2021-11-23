@@ -17,3 +17,5 @@ module.exports.run = async (client, message, args) => {
 
     message.channel.send({files: [attachment]});
 }
+
+module.exports.name = ['transfer'];
