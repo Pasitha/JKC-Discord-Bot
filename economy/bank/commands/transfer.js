@@ -40,7 +40,7 @@ module.exports.run = async (client, message, args) => {
                 });
             }
 
-            if (/^([0-9]+)$/.test(args[1])) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ ที่ใส่มามันไม่ใช่ตัวเลขนะคะ รบกวนใส่ใหม่อีกทีนะคะ`).setColor('#ff0000')] });
+            if (!/^([0-9]+)$/.test(args[1])) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ ที่ใส่มามันไม่ใช่ตัวเลขนะคะ รบกวนใส่ใหม่อีกทีนะคะ`).setColor('#ff0000')] });
             if (parseInt(args[1]) <= 0) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`ฮั่นแน่!! จะทำอะไรน่ะ ไปใส่จำนวนเงินมาใหม่เลย`).setColor('#ff0000')] });
 
             if (parseInt(args[1]) <= account_1.coins) {
