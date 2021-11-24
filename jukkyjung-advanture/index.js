@@ -21,7 +21,6 @@ const client = new Discord.Client({
 const fs = require('fs');
 
 const config = require('../settings.json');
-const jkcData = require('../database/jkc.json');
 
 client.commands = new Discord.Collection();
 
