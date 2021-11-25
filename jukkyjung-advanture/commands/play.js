@@ -4,6 +4,22 @@ const Canvas = require('canvas');
 const config = require('../../settings.json');
 
 module.exports.run = async (client, message, args) => {
+    let account = await prisma.user.findUnique({
+        where: {
+            discord_id: message.author.id
+        }
+    });
+    if (!account) {
+        account = await prisma.user.create({
+            data: {
+                discord_id: message.author.id,
+                discord_name: message.author.username
+            }
+        });
+    }
+
+    if (account.coins < 10) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ คุณไม่มีเงินพอสำหรับการเล่นนะคะ ค่าเล่นตาละ 10 JKC coins นะคะ`).setColor('#ff0000')] }); 
+
     const canvas = Canvas.createCanvas(960, 540);
     const context = canvas.getContext('2d');
 
@@ -16,6 +32,15 @@ module.exports.run = async (client, message, args) => {
     const attachment = new MessageAttachment(canvas.toBuffer(), 'game.png');
 
     message.channel.send({files: [attachment]});
+
+    await prisma.user.update({
+        where: {
+            discord_id: message.author.id
+        },
+        data: {
+            ...account
+        }
+    });
 }
 
 module.exports.name = ['play'];
