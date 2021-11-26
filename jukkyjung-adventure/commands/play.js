@@ -19,6 +19,7 @@ module.exports.run = async (client, message, args) => {
     }
 
     if (account.coins < 10) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ คุณไม่มีเงินพอสำหรับการเล่นนะคะ ค่าเล่นตาละ 10 JKC coins นะคะ`).setColor('#ff0000')] }); 
+    account.coins -= 10;
 
     const canvas = Canvas.createCanvas(960, 540);
     const context = canvas.getContext('2d');
