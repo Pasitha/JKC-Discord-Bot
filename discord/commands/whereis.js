@@ -1,9 +1,12 @@
 const { MessageEmbed } = require("discord.js");
 
-const config = require('../../settings.json');
+const { version } = require('../../settings.json');
 
 module.exports.run = (client, message, args) => {
-    function editDistance(string1, string2) {
+    // Levenshtein_distance
+    // https://en.wikipedia.org/wiki/Levenshtein_distance
+
+    const editDistance = (string1, string2) => {
         string1 = string1.toLowerCase();
         string2 = string2.toLowerCase();
 
@@ -30,7 +33,7 @@ module.exports.run = (client, message, args) => {
         return costs[string2.length];
     }
 
-    function similarity(string1, string2) {
+    const similarity = (string1, string2) => {
         let longer = string1;
         let shorter = string2;
 
@@ -47,7 +50,7 @@ module.exports.run = (client, message, args) => {
         return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
     }
 
-    function setPositionEmbed(position) {
+    const setPositionEmbed = position => {
         return `\`x : ${position[0]}\`\n\`y : ${position[1]}\`\n\`z : ${position[2]}\``;
     }
 
@@ -57,7 +60,7 @@ module.exports.run = (client, message, args) => {
     const listEmbed = new MessageEmbed()
         .setColor("#FFD157")
         .setThumbnail("https://triam.ddns.net/picture/Jukucrush_logo.png")
-        .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL())
+        .setFooter(client.user.username + " | Version " + version, client.user.displayAvatarURL())
 
     if (!args[0]) {
         listEmbed.setTitle("สถานที่มีที่ไหนบ้าง?");
@@ -72,7 +75,6 @@ module.exports.run = (client, message, args) => {
     } else {
         for (const elementKey of key) {
             if (similarity(args[0].toLowerCase(), elementKey) > 0.75) {
-
                 return message.channel.send({
                     embeds: [
                         listEmbed.setTitle(elementKey.toString().toUpperCase())
