@@ -3,7 +3,7 @@ const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient();
 const Canvas = require('canvas');
 
-const config = require('../../../settings.json');
+const { version } = require('../../../settings.json');
 
 module.exports.run = async (client, message, args) => {
     let account = await prisma.user.findUnique({
@@ -65,7 +65,7 @@ module.exports.run = async (client, message, args) => {
                     message.channel.send({embeds: [
                         new MessageEmbed().setTitle('ยินดีด้วยคุณชนะ').setColor('#FFD157').setThumbnail(client.user.displayAvatarURL())
                             .addField(`และนี้คือรางวัลของคุณค่ะ`, `เป็นจำนวนเงินทั้งสิ้น ${1000 * slot1} JKC Coins ค่ะ`)
-                            .setFooter(client.user.username + ' | Version ' + config.version, client.user.displayAvatarURL())
+                            .setFooter(client.user.username + ' | Version ' + version, client.user.displayAvatarURL())
                     ]})
                 }
                 await prisma.user.update({

@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient();
 
-const config = require('../../../settings.json');
+const { version } = require('../../../settings.json');
 
 module.exports.run = async (client, message, args) => {
     if (!args[0]) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ คุณอยากลงเดิมพันเท่าไหร่คะ`).setColor('#ff0000')] });
@@ -29,7 +29,7 @@ module.exports.run = async (client, message, args) => {
     if (amount > account.coins) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ คุณมีเงินไม่พอนะคะ`).setColor('#ff0000')] });
     
     let embed = new MessageEmbed().setColor('#FFD157').setThumbnail(client.user.displayAvatarURL())
-        .setFooter(client.user.username + ' | Version ' + config.version, client.user.displayAvatarURL());
+        .setFooter(client.user.username + ' | Version ' + version, client.user.displayAvatarURL());
 
     let dice1 = Math.floor(Math.random() * 6) + 1;
     let dice2 = Math.floor(Math.random() * 6) + 1;
