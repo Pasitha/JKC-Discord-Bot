@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient();
 
-const config = require('../../../settings.json');
+const { version }= require('../../../settings.json');
 
 module.exports.run = async (client, message, args) => {
     if (!args[0]) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ คุณจะโอนเงินให้ใครหรอคะ??`).setColor('#ff0000')] });
@@ -83,7 +83,7 @@ module.exports.run = async (client, message, args) => {
                 return message.channel.send({
                     embeds: [new MessageEmbed().setTitle(`💸โอนเงินสำเร็จค่ะะ💸`).setDescription(`ตอนนี้หนูโอนของ ${message.author.username} ไปให้ ${user.username} เป็นจำนวนเงิน ${args[1]} เรียบร้อยค่ะ💸`)
                         .setThumbnail(client.user.displayAvatarURL()).setColor('#FFD157')
-                        .setFooter(client.user.username + ' | Version ' + config.version, client.user.displayAvatarURL())]
+                        .setFooter(client.user.username + ' | Version ' + version, client.user.displayAvatarURL())]
                 });
             } else {
                 return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`คุณไม่มีเงินพอให้โอนนะคะ โปรดตรวจสอบเงินในบัญชีของคุณด้วย`)] });
