@@ -1,7 +1,6 @@
-const Discord = require("discord.js");
 const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
 
-const config = require('../../settings.json');
+const { version } = require('../../settings.json');
 
 module.exports.run = async (client, message, args) => {
     let QAndA_embed = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL())
@@ -12,10 +11,10 @@ module.exports.run = async (client, message, args) => {
 
     let embed1 = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL())
         .setTitle('ตอนนี้เปิดรับสมัคร Junior มั้ย ?').setDescription('ตอนนี้ทางทีมของJukucrush Team ยังไม่เปิดรับสมัครนะคะ')
-        .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL());
+        .setFooter(client.user.username + " | Version " + version, client.user.displayAvatarURL());
 
     let embed2 = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL())
-        .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL())
+        .setFooter(client.user.username + " | Version " + version, client.user.displayAvatarURL())
         .setTitle('👱🏻คำสั่งของ JKC Discord Bot (หนูนี้เองง) มีอะไรบ้าง ?').setDescription('ใน Github มีคำสั่งทิ้งหมดของหนูเขียนเอาไว้ให้แล้วค่าาา อ่านในนั้นรู้ทั้ง Code และ คำสั่งเลยนะคะ😅')
 
     const rowhome = new MessageActionRow()
