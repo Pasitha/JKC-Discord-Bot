@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const moment = require('moment');
 
-const config = require('../../settings.json');
+const { version } = require('../../settings.json');
 
 module.exports.run = async (client, message, args) => {
     const user = message.mentions.users.first() || message.author;
@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
         return message.channel.send({
             embeds: [new MessageEmbed()
                 .setColor('RED')
-                .setFooter(client.user.username + ' | Version ' + config.version, client.user.displayAvatarURL())
+                .setFooter(client.user.username + ' | Version ' + version, client.user.displayAvatarURL())
                 .setTitle(':x: Error | กรุณากล่าวถึงผู้ที่ต้องการทราบข้อมูล')
             ]
         });
@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
     roles.pop();
 
     moment.locale('th');
-    const embeduserinfo = new MessageEmbed().setColor(member.displayHexColor).setFooter(client.user.username + ' | Version ' + config.version, client.user.displayAvatarURL())
+    const embeduserinfo = new MessageEmbed().setColor(member.displayHexColor).setFooter(client.user.username + ' | Version ' + version, client.user.displayAvatarURL())
         .setThumbnail(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
         .setAuthor('Member ' + `${member.user.username}#${member.user.discriminator}` + ' information', member.user.displayAvatarURL({ dynamic: true }))
         .addField('Name:', `\`${member.user.username}#${member.user.discriminator}\``, true)

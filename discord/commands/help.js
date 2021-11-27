@@ -1,6 +1,6 @@
 const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
 
-const config = require('../../settings.json');
+const { version } = require('../../settings.json');
 
 module.exports.run = async (client, message, args) => {
     let discordCommands = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL()).setURL('https://github.com/Pasitha/JKC-Discord-Bot')
@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
             { name: ' - \`$random\`', value: 'ใช้สำหรับสุ่มตัวเลขตามช่วงต่าง ๆ' },
             { name: ' - \`$vote\`', value: 'ใช้สำหรับตั้งโพลโหวตส่งต่าง ๆ ที่ต้องการเสียงของคนหลาย ๆ คน' },
         )
-        .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL());
+        .setFooter(client.user.username + " | Version " + version, client.user.displayAvatarURL());
 
     let minecraftCommands = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL()).setURL('https://github.com/Pasitha/JKC-Discord-Bot')
         .setTitle('คำสั่งของ Jukkyjung').setDescription('ก่อนใช้ทุกคำสั่งใช้ให้พิมพ์นำหน้าด้วย \`$\` แล้วตามด้วยชื่อคำสั่งได้เลย')
@@ -23,7 +23,7 @@ module.exports.run = async (client, message, args) => {
             { name: ' - \`$onlineplayer\`', value: 'ใช้สำหรับบอกว่าในเซิฟ JKC Jr.5 มีผู้เล่นอะไรที่ online อยู่บ้าง' },
             { name: ' - \`$sendjr\`', value: 'ใช้สำหรับพิมพ์ข้อความเพื่อพูดคุยกับคนภายในเซิฟ JKC Jr.5' },
         )
-        .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL());
+        .setFooter(client.user.username + " | Version " + version, client.user.displayAvatarURL());
 
     let economyCommands = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL()).setURL('https://github.com/Pasitha/JKC-Discord-Bot')
         .setTitle('คำสั่งเกี่ยวกับ JKC coins').setDescription('ก่อนใช้ทุกคำสั่งใช้ให้พิมพ์นำหน้าด้วย \`$\` แล้วตามด้วยชื่อคำสั่งได้เลย')
@@ -39,7 +39,7 @@ module.exports.run = async (client, message, args) => {
             { name: ' - \`$slot\`', value: 'ใช้สำหรับการเล่น slot matchine สามารถเล่นได้\nโดยการพิมพ์ \`$slot\` จากนั้นทำการเลือกตู้ที่อยากเล่นและรุ้นรางวัลได้เลย'},
 
         )
-        .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL());
+        .setFooter(client.user.username + " | Version " + version, client.user.displayAvatarURL());
 
     const rowhome = new MessageActionRow()
         .addComponents(
