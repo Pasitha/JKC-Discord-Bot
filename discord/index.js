@@ -22,7 +22,7 @@ const fs = require('fs');
 const request = new (require('rss-parser'));
 const jsonstringify = require('json-stringify-pretty-compact');
 
-const config = require('../settings.json');
+const { version, prefix, token } = require('../settings.json');
 const jkcData = require('../database/jkc.json');
 
 client.commands = new Discord.Collection();
@@ -68,7 +68,7 @@ setInterval(() => {
             const HBDEmbed = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL()).setColor("#FFD157")
                 .setTitle(`🎂🎂🎂 สุขสันต์วันเกิดนะคะ 🥂 ${require('../jkc.json').member[0].youtube.channelName} 🎂🎂🎂`)
-                .setFooter(client.user.username + " | Version " + config.version, client.user.displayAvatarURL());
+                .setFooter(client.user.username + " | Version " + version, client.user.displayAvatarURL());
 
             return client.channels.cache.get("552889042878857227").send({ embeds: [HBDEmbed] });
         }
@@ -102,8 +102,6 @@ client.once('ready', () => {
 });
 
 client.on('messageCreate', message => {
-    const prefix = config.prefix;
-
     if (message.author.bot || !message.content.startsWith(prefix) || message.channel.type === 'dm') return;
 
     const messageArray = message.content.split(' ');
@@ -115,4 +113,4 @@ client.on('messageCreate', message => {
 		commandfile.run(client, message, args);
 });
 
-client.login(config.token);
+client.login(token);
