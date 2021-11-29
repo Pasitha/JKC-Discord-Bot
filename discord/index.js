@@ -84,9 +84,6 @@ fs.readdir('commands/', (err, files) => {
 
 // discord event section
 client.once('ready', () => {
-    client.user.setStatus('idle');
-    client.user.setPresence({ activities: [{ name: 'Discord' }], status: 'playing' });
-
     console.log('JKC Discord Bot: discord section ready');
 });
 
