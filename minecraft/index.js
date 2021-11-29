@@ -1,17 +1,15 @@
 const { Client, Intents } = require('discord.js');
-const client = new Discord.Client({
+const client = new Client({
     intents: [
-
-        "GUILDS",
-        "GUILD_MESSAGES",
+        Intents.FLAGS.GUILDS,
+        Intents.FLAGS.GUILD_MESSAGES,
     ]
 });
 const mineflayer = require('mineflayer');
 const fs = require('fs');
 
-const config = require('../settings.json');
+const { prefix } = require('../settings.json');
 
-const prefix = config.prefix;
 client.commands = new Discord.Collection();
 
 let JKCJrBot = mineflayer.createBot(config.minecraftid.JukkyjungJR);
@@ -125,6 +123,8 @@ const createJKCJrBot = () => {
 
                 await new Promise(resolve => setTimeout(resolve, 50));
                 await JKCJrBot.waitForChunksToLoad();
+
+                if (!bot.players[username].entity?.heldItem?.name) return bot.chat('รบกวนช่วยถือเพชรไว้หน่อยนะคะ');
 
                 if (JKCJrBot.players[username].entity.heldItem.name === "diamond") {
                     if (JKCJrBot.players[username].entity.heldItem.count >= Math.floor(parseInt(args[1]))) {
