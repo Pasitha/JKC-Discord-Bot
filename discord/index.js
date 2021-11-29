@@ -1,21 +1,10 @@
-const Discord = require('discord.js');
+const { Client, Intents, Collection } = require('discord.js');
 const client = new Discord.Client({
     intents: [
-        "GUILDS",
-        "GUILD_BANS",
-        "GUILD_EMOJIS_AND_STICKERS",
-        "GUILD_INTEGRATIONS",
-        "GUILD_INVITES",
-        "GUILD_MEMBERS",
-        "GUILD_MESSAGES",
-        "GUILD_MESSAGE_REACTIONS",
-        "GUILD_MESSAGE_TYPING",
-        "GUILD_PRESENCES",
-        "GUILD_VOICE_STATES",
-        "GUILD_WEBHOOKS",
-        "DIRECT_MESSAGES",
-        "DIRECT_MESSAGE_REACTIONS",
-        "DIRECT_MESSAGE_TYPING"
+        Intents.FLAGS.GUILDS,
+        Intents.FLAGS.GUILD_MESSAGES,
+        Intents.FLAGS.GUILD_MEMBERS,
+        Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
     ]
 });
 const fs = require('fs');
@@ -23,22 +12,22 @@ const request = new (require('rss-parser'));
 const jsonstringify = require('json-stringify-pretty-compact');
 
 const { version, prefix, token } = require('../settings.json');
-const jkcData = require('../database/jkc.json');
+const { member } = require('../database/jkc.json');
 
 client.commands = new Discord.Collection();
 
 // Youtube update
 setInterval(() => {
-    if (jkcData.member.length > 32) {
-        console.log(jkcData.member.length);
+    if (member.length > 32) {
+        console.log(member.length);
         return;
     }
 
-    for (let i = 0; i < jkcData.member.length; i++) {
-        if (jkcData.member[i].allowUpdate) {
-            request.parseURL(`https://www.youtube.com/feeds/videos.xml?channel_id=${jkcData.member[i].youtube.channelId}`).then((data) => {
+    for (let i = 0; i < member.length; i++) {
+        if (member[i].allowUpdate) {
+            request.parseURL(`https://www.youtube.com/feeds/videos.xml?channel_id=${member[i].youtube.channelId}`).then((data) => {
 
-                if (!jkcData.member[i].youtube.lastVideoUpdate.includes(data.items[0].link)) {
+                if (!member[i].youtube.lastVideoUpdate.includes(data.items[0].link)) {
                     let channel = client.channels.cache.get('438885368436359168');
 
                     if (channel) {
@@ -47,11 +36,11 @@ setInterval(() => {
                     }
 
                     for (let j = 0; j < 3; j++) {
-                        jkcData.member[i].youtube.lastVideoUpdate[j] = data.items[j].link;
+                        member[i].youtube.lastVideoUpdate[j] = data.items[j].link;
                     }
                 }
 
-                fs.writeFile('../database/jkc.json', jsonstringify(jkcData), (err) => {
+                fs.writeFile('../database/jkc.json', jsonstringify({ member }), (err) => {
                     if (err) throw err;
                 });
             }).catch(error => console.log(error));
@@ -63,11 +52,11 @@ setInterval(() => {
 setInterval(() => {
     const todayStr = new Date().toLocaleString('en-US', { year: '2-digit', month: '2-digit', day: '2-digit', timeZone: 'Asia/Bangkok' }).slice(0, 5);
 
-    for (let i = 0; i < jkcData.member.length; i++) {
-        if (jkcData.member[i].birthDay.slice(0, 5) === todayStr) {
+    for (let i = 0; i < member.length; i++) {
+        if (member[i].birthDay.slice(0, 5) === todayStr) {
             const HBDEmbed = new Discord.MessageEmbed()
                 .setThumbnail(client.user.displayAvatarURL()).setColor("#FFD157")
-                .setTitle(`🎂🎂🎂 สุขสันต์วันเกิดนะคะ 🥂 ${require('../jkc.json').member[0].youtube.channelName} 🎂🎂🎂`)
+                .setTitle(`🎂🎂🎂 สุขสันต์วันเกิดนะคะ 🥂 ${member[i].youtube.channelName} 🎂🎂🎂`)
                 .setFooter(client.user.username + " | Version " + version, client.user.displayAvatarURL());
 
             return client.channels.cache.get("552889042878857227").send({ embeds: [HBDEmbed] });
