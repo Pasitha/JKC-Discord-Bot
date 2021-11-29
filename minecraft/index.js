@@ -8,7 +8,7 @@ const client = new Client({
 const mineflayer = require('mineflayer');
 const fs = require('fs');
 
-const { prefix } = require('../settings.json');
+const { prefix, token } = require('../settings.json');
 
 client.commands = new Discord.Collection();
 
@@ -51,7 +51,7 @@ client.on('messageCreate', message => {
 		commandfile.run(client, JKCJrBot, JKCSupBot, message, args);
 });
 
-client.login(config.token);
+client.login(token);
 
 // mineflayer event section
 const createJKCJrBot = () => {

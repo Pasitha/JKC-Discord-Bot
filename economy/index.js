@@ -1,30 +1,19 @@
-const Discord = require('discord.js');
-const client = new Discord.Client({
+const { Client, Intents, Collection} = require('discord.js');
+const client = new Client({
     intents: [
-        'GUILDS',
-        'GUILD_BANS',
-        'GUILD_EMOJIS_AND_STICKERS',
-        'GUILD_INTEGRATIONS',
-        'GUILD_INVITES',
-        'GUILD_MEMBERS',
-        'GUILD_MESSAGES',
-        'GUILD_MESSAGE_REACTIONS',
-        'GUILD_MESSAGE_TYPING',
-        'GUILD_PRESENCES',
-        'GUILD_VOICE_STATES',
-        'GUILD_WEBHOOKS',
-        'DIRECT_MESSAGES',
-        'DIRECT_MESSAGE_REACTIONS',
-        'DIRECT_MESSAGE_TYPING'
+        Intents.FLAGS.GUILDS,
+        Intents.FLAGS.GUILD_MESSAGES,
+        Intents.FLAGS.GUILD_MEMBERS,
+        Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
     ]
 });
 const fs = require('fs');
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-const config = require('../settings.json');
+const { prefix, token } = require('../settings.json');
 
-client.commands = new Discord.Collection();
+client.commands = new Collection();
 
 // interest system
 setInterval(async () => {
@@ -59,8 +48,7 @@ client.once('ready', () => {
     console.log('JKC Discord Bot: economy section ready');
 });
 
-client.on('messageCreate', message => { 
-    const prefix = config.prefix;
+client.on('messageCreate', message => {
 
 	if (message.author.bot || !message.content.startsWith(prefix) || message.channel.type === 'dm') return;
 
@@ -73,4 +61,4 @@ client.on('messageCreate', message => {
 		commandfile.run(client, message, args);
 });
 
-client.login(config.token);
+client.login(token);
