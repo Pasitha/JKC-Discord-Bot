@@ -1,4 +1,4 @@
-const { Client, Intents } = require('discord.js');
+const { Client, Intents, Collection } = require('discord.js');
 const client = new Client({
     intents: [
         Intents.FLAGS.GUILDS,
@@ -10,7 +10,7 @@ const fs = require('fs');
 
 const { prefix, token } = require('../settings.json');
 
-client.commands = new Discord.Collection();
+client.commands = new Collection();
 
 let JKCJrBot = mineflayer.createBot(config.minecraftid.JukkyjungJR);
 let JKCSupBot = mineflayer.createBot(config.minecraftid.JukkyjungSUP);
