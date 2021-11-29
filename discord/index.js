@@ -1,5 +1,5 @@
 const { Client, Intents, Collection } = require('discord.js');
-const client = new Discord.Client({
+const client = new Client({
     intents: [
         Intents.FLAGS.GUILDS,
         Intents.FLAGS.GUILD_MESSAGES,
@@ -14,7 +14,7 @@ const jsonstringify = require('json-stringify-pretty-compact');
 const { version, prefix, token } = require('../settings.json');
 const { member } = require('../database/jkc.json');
 
-client.commands = new Discord.Collection();
+client.commands = new Collection();
 
 // Youtube update
 setInterval(() => {
