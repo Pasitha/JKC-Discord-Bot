@@ -1,26 +1,15 @@
-const Discord = require('discord.js');
+const { Client, Intents, Collection } = require('discord.js');
 const client = new Discord.Client({
     intents: [
-        "GUILDS",
-        "GUILD_BANS",
-        "GUILD_EMOJIS_AND_STICKERS",
-        "GUILD_INTEGRATIONS",
-        "GUILD_INVITES",
-        "GUILD_MEMBERS",
-        "GUILD_MESSAGES",
-        "GUILD_MESSAGE_REACTIONS",
-        "GUILD_MESSAGE_TYPING",
-        "GUILD_PRESENCES",
-        "GUILD_VOICE_STATES",
-        "GUILD_WEBHOOKS",
-        "DIRECT_MESSAGES",
-        "DIRECT_MESSAGE_REACTIONS",
-        "DIRECT_MESSAGE_TYPING"
+        Intents.FLAGS.GUILDS,
+        Intents.FLAGS.GUILD_MESSAGE,
+        Intents.FLAGS.GUILD_MEMBERS,
+        Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
     ]
 });
 const fs = require('fs');
 
-const config = require('../settings.json');
+const { prefix, token } = require('../settings.json');
 
 client.commands = new Discord.Collection();
 
@@ -51,8 +40,6 @@ client.once('ready', () => {
 });
 
 client.on('messageCreate', message => {
-    const prefix = config.prefix;
-
     if (message.author.bot || !message.content.startsWith(prefix) || message.channel.type === 'dm') return;
 
     const messageArray = message.content.split(' ');
@@ -64,4 +51,4 @@ client.on('messageCreate', message => {
 		commandfile.run(client, message, args);
 });
 
-client.login(config.token);
+client.login(token);
