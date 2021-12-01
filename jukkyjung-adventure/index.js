@@ -1,5 +1,5 @@
 const { Client, Intents, Collection } = require('discord.js');
-const client = new Discord.Client({
+const client = new Client({
     intents: [
         Intents.FLAGS.GUILDS,
         Intents.FLAGS.GUILD_MESSAGE,
@@ -11,7 +11,7 @@ const fs = require('fs');
 
 const { prefix, token } = require('../settings.json');
 
-client.commands = new Discord.Collection();
+client.commands = new Collection();
 
 // load discord commands
 fs.readdir('commands/', (err, files) => {
