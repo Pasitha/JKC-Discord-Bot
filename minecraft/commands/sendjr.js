@@ -8,11 +8,7 @@ module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
             role.name === 'Jukucrush Junior' || role.name === 'Jukuboost' || role.name === 'Moderator';
     })) {
         if (message.channel.id === '423047710413946880') {
-            JKCJrBot.chat(`/tellraw @a [\"<\",{\"text\":\"${message.author.username}\",\"bold\":true,\"color\":\"blue\"},\"> ${args.map(function (sentence) { return sentence; }).join(' ')}\"]`);
-        } else if (message.guild.id === '748140372814856292' && message.channel.id === '892428320136904744') {
-            JKCSupBot.chat(`จาก ${message.author.username} ${args.map(function (sentence) {
-                return sentence;
-            }).join(' ')}`);
+            JKCJrBot.chat(`/tellraw @a [\"<\",{\"text\":\"${message.author.username}\",\"bold\":true,\"color\":\"${message.member.displayHexColor}\"},\"> ${args.map(function (sentence) { return sentence; }).join(' ')}\"]`);
         } else {
             return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`คำสั่งนี้หนูไม่ให้สั่งในห้องนี้นะ!!! ไปสั่งหนูให้ถูกห้องเลยนะ`).setColor('#ff0000')] });
         }
