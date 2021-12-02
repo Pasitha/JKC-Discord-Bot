@@ -88,6 +88,14 @@ client.once('ready', () => {
 });
 
 client.on('messageCreate', message => {
+    const regex = /https?:\/\/(www\.)?(drive.google.com|youtube.com|youtu.be|github.com|stackoverflow.com|facebook.com|drive.google.com|cdn.discordapp.com|discord.com|th.wikipedia.org|en.wikipedia.org)\/?/;
+
+    if (!regex.test(message.content)) {
+        fs.appendFile('../database/website.csv', `\n\"${message.author.username}\",\"${message.author.id}\",\"${message.content}\",\"${message.content.split(' ').filter(word => word.match(/https?:\/\//)).join(' ')}\"`, function (err) {
+            if (err) throw err;
+            message.delete();
+        });
+    }
     if (message.author.bot || !message.content.startsWith(prefix) || message.channel.type === 'dm') return;
 
     const messageArray = message.content.split(' ');
