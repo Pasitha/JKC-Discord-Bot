@@ -5,8 +5,8 @@ const prisma = new PrismaClient();
 const config = require('../../../settings.json');
 
 module.exports.run = async (client, message, args) => {
-    if (!args[0]) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ คุณอยากลงเดิมพันเท่าไหร่คะ`).setColor('#ff0000')] });
-    if (!/^([0-9]+)$/.test(args[1])) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ ที่ใส่มามันไม่ใช่ตัวเลขนะคะ รบกวนใส่ใหม่อีกทีนะคะ`).setColor('#ff0000')] });
+    if (!args[0]) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ อยากถอนตังเท่าไหร่หรอคะ`).setColor('#ff0000')] });
+    if (!/^([0-9]+)$/.test(args[0])) return message.channel.send({ embeds: [new MessageEmbed().setAuthor(`🤨เอ่ออ คุณ${message.author.username} คะ ที่ใส่มามันไม่ใช่ตัวเลขนะคะ รบกวนใส่ใหม่อีกทีนะคะ`).setColor('#ff0000')] });
 
     let user = await prisma.user.findUnique({
         where: {
