@@ -88,18 +88,21 @@ client.once('ready', () => {
 });
 
 client.on('messageCreate', message => {
+    if (message.author.bot || message.channel.type === 'dm') return;
+
     const web = message.content.split(' ').filter(word => word.match(/https?:\/\//)).join(' ');
-    if (web) {
-        const regex = /https?:\/\/(www\.)?(drive.google.com|forms.gle|youtube.com|youtu.be|github.com|stackoverflow.com|web.facebook.com|facebook.com|cdn.discordapp.com|discord.com|discord.gg|media.discordapp.com|th.wikipedia.org|en.wikipedia.org|feedback.minecraft.net|minecraft.net|twitter.com|tenor.com|optifine.net|fabricmc.net|vt.tiktok.com|playvalorant.com)\/?/;
+    if (web && message.content != '') {
+        const regex = /https?:\/\/(www\.)?(drive.google.com|forms.gle|youtube.com|youtu.be|github.com|stackoverflow.com|web.facebook.com|facebook.com|cdn.discordapp.com|discord.com|discord.gg|media.discordapp.com|th.wikipedia.org|en.wikipedia.org|feedback.minecraft.net|minecraft.net|twitter.com|tenor.com|optifine.net|fabricmc.net|vt.tiktok.com|playvalorant.com|curseforge.com)\/?/;
     
         if (!regex.test(message.content)) {
             fs.appendFile('../database/website.csv', `\n\"${message.author.username}\",\"${message.author.id}\",\"${message.content.replace(/(\r\n|\n|\r)/gm, '')}\",\"${web}\"`, function (err) {
                 if (err) throw err;
                 message.delete();
             });
+            return;
         }
     }
-    if (message.author.bot || !message.content.startsWith(prefix) || message.channel.type === 'dm') return;
+    if (!message.content.startsWith(prefix)) return;
 
     const messageArray = message.content.split(' ');
     const cmd = messageArray[0];
