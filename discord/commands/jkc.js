@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
             .addField('📰สามารถติดตาม Jukucrush Team ได้ที่ Facebook', '[Facebook - Jukucrush Team](https://www.facebook.com/JukucrushTeam?ref=hl)')
             .addField('📌หรือที่ youtube', '[Youtube - Jukucrush Team](https://www.youtube.com/channel/UC-lNawOSpzmBSO-IqKImcfw)')
             .addField('👨🏻‍💻สามารถตรวจสอบคำสั่งและอัพเดตทั้งหมดได้ที่', '[Github JKC - Discord Bot](https://github.com/Pasitha/JKC-Discord-Bot)')
-            .addField('👉🏻หรือสามารถพิมพ์', '```$help```')
+            .addField('👉🏻หรือสามารถพิมพ์', '`$help`')
             .setFooter(client.user.username + ' | Version ' + config.version, client.user.displayAvatarURL());
 
         return message.channel.send({ embeds: [embedjkcinfo], components: [link] });
