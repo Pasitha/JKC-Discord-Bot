@@ -15,8 +15,8 @@ client.commands = new Collection();
 let JKCJrBot;
 let JKCSupBot;
 
-// load commands
-fs.readdir('commands/', (err, files) => {
+// load discord commands
+fs.readdir('discord-commands/', (err, files) => {
     
     if (err) console.log(err);
 
