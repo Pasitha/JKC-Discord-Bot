@@ -6,7 +6,7 @@ const { version } = require('../../settings.json');
 module.exports.run = async (client, message, args) => {
     const ShiorizeID = (await axios.get(`https://api.mojang.com/users/profiles/minecraft/Shiorize`)).data
 
-    let jrshopEmbed = new MessageEmbed().setColor("#FFD157").setThumbnail(`https://github.com/Pasitha/JKC-Discord-Bot/blob/main/picture/jkc-logo/JuniorLogo.png`)
+    let jrshopEmbed = new MessageEmbed().setColor("#FFD157").setThumbnail(`https://raw.githubusercontent.com/Pasitha/JKC-Discord-Bot/main/picture/jkc-logo/JuniorLogo.png`)
         .setTitle('ร้านค้าออนไลน์').setDescription('อยากดูรายการของร้านไหนสามารถกดดูได้เลยนะคะ')
         .addField('1️⃣  ShiorizeFOOD', '\u200B')
         .setFooter('👋สามารถกดปุ่มเพื่อดูลายละเอียดเพิ่มเติมได้นะคะ');
@@ -47,8 +47,6 @@ module.exports.run = async (client, message, args) => {
                 .setEmoji('1️⃣')
                 .setDisabled(true),
         );
-
-    // client.users.cache.get('772298728697495582').send({ embeds: [randomEmbed.setAuthor(`คือ หนูจะบอกว่าที่คุณใส่มาน่ะมันไม่ใช่ตัวเลขอะค่ะ ช่วยใส่ให้หนูใหม่ได้มั้ยคะ`).setColor('#ff0000')] });
 
     let msg = await message.channel.send({ embeds: [jrshopEmbed], components: [rowhome] });
     const collector = message.channel.createMessageComponentCollector({ time: 15000 });
