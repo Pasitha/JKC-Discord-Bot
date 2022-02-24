@@ -23,4 +23,4 @@ module.exports.run = (bot, args) => {
     }
 }
 
-module.exports.name = ['transfer', 'trans']
+module.exports.name = ['transfer', 'trans'];

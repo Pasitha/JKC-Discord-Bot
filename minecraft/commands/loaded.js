@@ -3,4 +3,4 @@ module.exports.run = async (bot, args) => {
     JKCJrBot.chat('Ready!');
 }
 
-module.exports.name = ['loaded']
+module.exports.name = ['loaded'];

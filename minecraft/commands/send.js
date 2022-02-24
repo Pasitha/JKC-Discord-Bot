@@ -4,4 +4,4 @@ module.exports.run = (bot, args) => {
     }).join(' ')}`);
 }
 
-module.exports.name = ['sendjkc']
+module.exports.name = ['sendjkc'];
