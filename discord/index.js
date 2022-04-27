@@ -92,7 +92,7 @@ client.on('messageCreate', message => {
 
     const web = message.content.split(' ').filter(word => word.match(/https?:\/\//)).join(' ');
     if (web && message.content != '') {
-        const regex = /https?:\/\/(www\.)?(drive.google.com|forms.gle|youtube.com|youtu.be|github.com|stackoverflow.com|web.facebook.com|facebook.com|cdn.discordapp.com|discord.com|discord.gg|media.discordapp.com|th.wikipedia.org|en.wikipedia.org|feedback.minecraft.net|minecraft.net|twitter.com|tenor.com|optifine.net|fabricmc.net|vt.tiktok.com|playvalorant.com|curseforge.com)\/?/;
+        const regex = /https?:\/\/(www\.)?(drive.google.com|forms.gle|youtube.com|youtu.be|github.com|stackoverflow.com|web.facebook.com|facebook.com|cdn.discordapp.com|discord.com|discord.gg|media.discordapp.com|th.wikipedia.org|en.wikipedia.org|feedback.minecraft.net|minecraft.net|twitter.com|tenor.com|optifine.net|fabricmc.net|vt.tiktok.com|playvalorant.com|curseforge.com|studio.phumin.in.th|bugs.mojang.com|instagram.com|minecraft.fandom.com|twitch.tv)\/?/;
     
         if (!regex.test(message.content)) {
             fs.appendFile('../database/website.csv', `\n\"${message.author.username}\",\"${message.author.id}\",\"${message.content.replace(/(\r\n|\n|\r)/gm, '')}\",\"${web}\"`, function (err) {
