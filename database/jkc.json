@@ -6,9 +6,9 @@
         "channelName": "JKC Team",
         "channelId": "UC-lNawOSpzmBSO-IqKImcfw",
         "lastVideoUpdate": [
+          "https://www.youtube.com/watch?v=aZJ2BmZKaiI",
           "https://www.youtube.com/watch?v=DxG93Xzekus",
-          "https://www.youtube.com/watch?v=VD8SweuFPdc",
-          "https://www.youtube.com/watch?v=-nJzlw7Oqew"
+          "https://www.youtube.com/watch?v=VD8SweuFPdc"
         ]
       },
       "allowUpdate": true
@@ -32,9 +32,9 @@
         "channelName": "truefaster",
         "channelId": "UCvAD35ExopO_imh2hG8joVA",
         "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=IW7IP7YYVR4",
-          "https://www.youtube.com/watch?v=nDgsF5COw8o",
-          "https://www.youtube.com/watch?v=Y_-bBMrzbUM"
+          "https://www.youtube.com/watch?v=dHhIw-00fKQ",
+          "https://www.youtube.com/watch?v=R3y2XiFasfE",
+          "https://www.youtube.com/watch?v=gYy4h0rRbLM"
         ]
       },
       "allowUpdate": true
@@ -45,9 +45,9 @@
         "channelName": "FreshZ",
         "channelId": "UCD6F39uqBBM2LfXGb6aD8sQ",
         "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=K5gKpCGa-Hk",
-          "https://www.youtube.com/watch?v=fDUqGZIxSiQ",
-          "https://www.youtube.com/watch?v=raQhRvy29Ug"
+          "https://www.youtube.com/watch?v=tpuww2h_OyQ",
+          "https://www.youtube.com/watch?v=W50a25EorPA",
+          "https://www.youtube.com/watch?v=upj2MruTb54"
         ]
       },
       "allowUpdate": true
@@ -84,9 +84,9 @@
         "channelName": "PeeMeenCH",
         "channelId": "UCTk2mxyDsqRlRn5HzAo4Zzg",
         "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=nvuY8VrsiRk",
-          "https://www.youtube.com/watch?v=5RqUxUVTyOQ",
-          "https://www.youtube.com/watch?v=ksEz8NMGTe4"
+          "https://www.youtube.com/watch?v=-HOIfAk24Is",
+          "https://www.youtube.com/watch?v=ceWrvIeLhNM",
+          "https://www.youtube.com/watch?v=HCxxDcGyIAo"
         ]
       },
       "allowUpdate": true
@@ -118,6 +118,19 @@
       "allowUpdate": true
     },
     {
+      "birthDay": "11/26/2003",
+      "youtube": {
+        "channelName": "GucciGuy",
+        "channelId": "UC1VzAZISuwQ-lwb-oHWhvmQ",
+        "lastVideoUpdate": [
+          "https://www.youtube.com/watch?v=uS7EIJugN5M",
+          "https://www.youtube.com/watch?v=3dQvs5DsV9I",
+          "https://www.youtube.com/watch?v=T89nsv5sdiw"
+        ]
+      },
+      "allowUpdate": true
+    },
+    {
       "birthDay": "02/14/2005",
       "youtube": {
         "channelName": "RKGz",
@@ -126,6 +139,19 @@
           "https://www.youtube.com/watch?v=vB__WR01Eoo",
           "https://www.youtube.com/watch?v=M_jg8lAJv_Q",
           "https://www.youtube.com/watch?v=JMfhwxo_ijU"
+        ]
+      },
+      "allowUpdate": true
+    },
+    {
+      "birthDay": "04/24/2000",
+      "youtube": {
+        "channelName": "SiMonZWolf",
+        "channelId": "UCoZGzmRcvXQt4Mv3LS_49Bg",
+        "lastVideoUpdate": [
+          "https://www.youtube.com/watch?v=-eNGVNyR-mQ",
+          "https://www.youtube.com/watch?v=4hnha0sHTQI",
+          "https://www.youtube.com/watch?v=gaIZIfulpjU"
         ]
       },
       "allowUpdate": true
@@ -197,9 +223,9 @@
         "channelName": "LonelyCrown",
         "channelId": "UCuKHNZ2eCMJbRzd8cZH6V8Q",
         "lastVideoUpdate": [
+          "https://www.youtube.com/watch?v=PVEVS-whuzw",
           "https://www.youtube.com/watch?v=AMRCknmNNX0",
-          "https://www.youtube.com/watch?v=iK3FPFunbcM",
-          "https://www.youtube.com/watch?v=LglKEvgcnps"
+          "https://www.youtube.com/watch?v=iK3FPFunbcM"
         ]
       },
       "allowUpdate": true
