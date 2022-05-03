@@ -74,7 +74,7 @@ client.login(token);
 const createJKCBot = () => {
     JKCBot = mineflayer.createBot(minecraftid.Jukkyjung);
     JKCBot.once('spawn', () => {
-        console.log('JKC Jr Bot spawn');
+        console.log('JKC Bot: spawn');
     });
   
     JKCBot.on('chat', async (username, message) => {
@@ -88,7 +88,7 @@ const createJKCBot = () => {
             require(`./commands/${minecraftCommand}.js`).run(JKCBot, args)
         }
     });
-    JKCBot.on('error', (err) => console.log('JKC Jr Bot: ', err));
+    JKCBot.on('error', (err) => console.log('JKC Bot: ', err));
     JKCBot.on('end', createJKCBot);
 }
 createJKCBot();
