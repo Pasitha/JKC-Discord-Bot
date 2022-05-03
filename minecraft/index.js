@@ -13,8 +13,7 @@ const { prefix, token, minecraftid } = require('../settings.json');
 client.commands = new Collection();
 let ModuleName = []
 
-let JKCJrBot;
-let JKCSupBot;
+let JKCBot;
 
 // load discord commands
 fs.readdir('discord-commands/', (err, files) => {
@@ -74,46 +73,24 @@ client.on('messageCreate', message => {
 client.login(token);
 
 // mineflayer event section
-const createJKCJrBot = () => {
-    JKCJrBot = mineflayer.createBot(minecraftid.JukkyjungJR);
-    JKCJrBot.once('spawn', () => {
+const createJKCBot = () => {
+    JKCBot = mineflayer.createBot(minecraftid.JukkyjungJR);
+    JKCBot.once('spawn', () => {
         console.log('JKC Jr Bot spawn');
     });
   
-    JKCJrBot.on('chat', async (username, message) => {
-        if (username === JKCJrBot.username || !message.startsWith(prefix)) return;
+    JKCBot.on('chat', async (username, message) => {
+        if (username === JKCBot.username || !message.startsWith(prefix)) return;
 
         const messageArray = message.split(' ');
         const cmd = messageArray[0];
         const args = messageArray.slice(1);
 
         if (ModuleName.includes(cmd)) {
-            require(`./commands/${cmd}.js`).run(JKCJrBot, args)
+            require(`./commands/${cmd}.js`).run(JKCBot, args)
         }
     });
-    JKCJrBot.on('error', (err) => console.log('JKC Jr Bot: ', err));
-    JKCJrBot.on('end', createJKCJrBot);
+    JKCBot.on('error', (err) => console.log('JKC Jr Bot: ', err));
+    JKCBot.on('end', createJKCBot);
 }
-createJKCJrBot();
-
-const createJKCSupBot = () => {
-    JKCSupBot = mineflayer.createBot(minecraftid.JukkyjungSUP);
-    JKCSupBot.once('spawn', () => {
-        console.log('JKC Sup Bot spawn');
-    });
-  
-    JKCSupBot.on('chat', async (username, message) => {
-        if (username === JKCSupBot.username || !message.startsWith(prefix)) return;
-
-        const messageArray = message.split(' ');
-        const cmd = messageArray[0];
-        const args = messageArray.slice(1);
-
-        if (ModuleName.includes(cmd)) {
-            require(`./commands/${cmd}.js`).run(JKCSupBot, args)
-        }
-    });
-    JKCSupBot.on('error', (err) => console.log('JKC Sup Bot: ', err));
-    JKCSupBot.on('end', createJKCSupBot);
-}
-createJKCSupBot();
+createJKCBot();
