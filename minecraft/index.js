@@ -46,7 +46,7 @@ fs.readdir('commands/', (err, files) => {
         const modules = require(`./commands/${f}`);
         
         modules.name.forEach(commandName => {            
-            ModuleName = [...ModuleName, commandName]
+            ModuleName = [...ModuleName, commandName];
         });
     });
 });
@@ -60,10 +60,10 @@ client.on('messageCreate', message => {
     if (message.author.bot || !message.content.startsWith(prefix) || message.channel.type === 'DM') return;
 
     const messageArray = message.content.split(' ');
-    const cmd = messageArray[0];
+    const discordCommand = messageArray[0];
     const args = messageArray.slice(1);
 
-    const commandfile = client.commands.get(cmd.slice(prefix.length).toString().toLowerCase());
+    const commandfile = client.commands.get(discordCommand.slice(prefix.length).toString().toLowerCase());
 	if (commandfile)
 		commandfile.run(client, JKCBot, message, args);
 });
@@ -81,11 +81,11 @@ const createJKCBot = () => {
         if (username === JKCBot.username || !message.startsWith(prefix)) return;
 
         const messageArray = message.split(' ');
-        const cmd = messageArray[0];
+        const minecraftCommand = messageArray[0];
         const args = messageArray.slice(1);
 
-        if (ModuleName.includes(cmd)) {
-            require(`./commands/${cmd}.js`).run(JKCBot, args)
+        if (ModuleName.includes(minecraftCommand)) {
+            require(`./commands/${minecraftCommand}.js`).run(JKCBot, args)
         }
     });
     JKCBot.on('error', (err) => console.log('JKC Jr Bot: ', err));
