@@ -31,7 +31,7 @@
     "discord.js": "^13.6.0",
     "fs": "^0.0.1-security",
     "json-stringify-pretty-compact": "^3.0.0",
-    "mineflayer": "^3.15.0",
+    "mineflayer": "^3.18.0",
     "moment": "^2.29.1",
     "rss-parser": "^3.12.0"
   },
