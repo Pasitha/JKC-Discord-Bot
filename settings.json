@@ -3,7 +3,7 @@
 	"prefix": "$",
 	"version": "v.0.1.5",
 	"minecraftid": {
-		"JukkyjungJR": {
+		"Jukkyjung": {
 			"host": "<server ip>",
 			"username": "<email>",
 			"auth": "microsoft"
