@@ -1,20 +1,12 @@
 {
-  "token": "<Discord Bot Token>",
-  "prefix": "$",
-  "ownerIDS": ["<owner Discord id>"],
-  "version": "v.0.1.4",
-  "minecraftid": {
-    "JukkyjungJR": {
-      "host": "<server ip>",
-      "username": "<email>",
-      "password": "<password>",
-      "auth": "mojang"
-    },
-    "JukkyjungSUP": {
-      "host": "<server ip>",
-      "username": "<email>",
-      "password": "<password>",
-      "auth": "mojang"
-    }
-  }
+	"token": "<Discord Bot Token>",
+	"prefix": "$",
+	"version": "v.0.1.5",
+	"minecraftid": {
+		"JukkyjungJR": {
+			"host": "<server ip>",
+			"username": "<email>",
+			"auth": "microsoft"
+		}
+	}
 }
