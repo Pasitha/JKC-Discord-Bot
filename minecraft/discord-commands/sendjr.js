@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 const config = require('../../settings.json');
 
-module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
+module.exports.run = async (client, JKCJrBot, message, args) => {
     if (message.member.roles.cache.some(role => {
         return role.name === 'Jukucrush Member' ||
             role.name === 'Jukucrush Junior' || role.name === 'Jukuboost' || role.name === 'Moderator';

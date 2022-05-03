@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 
 const config = require('../../settings.json');
 
-module.exports.run = async (client, JKCJrBot, JKCSupBot, message, args) => {
+module.exports.run = async (client, JKCJrBot, message, args) => {
     if (message.guild.id === '423007343127822338') {
         if (!args[0]) return message.channel.send({
             embeds: [

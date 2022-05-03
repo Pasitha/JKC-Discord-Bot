@@ -17,7 +17,6 @@ let JKCBot;
 
 // load discord commands
 fs.readdir('discord-commands/', (err, files) => {
-    
     if (err) console.log(err);
 
     const jsfiles = files.filter(f => f.split('.').pop() === 'js');
@@ -36,7 +35,6 @@ fs.readdir('discord-commands/', (err, files) => {
 
 // load minecraft commands
 fs.readdir('commands/', (err, files) => {
-    
     if (err) console.log(err);
 
     const jsfiles = files.filter(f => f.split('.').pop() === 'js');
@@ -59,7 +57,7 @@ client.once('ready', () => {
 });
 
 client.on('messageCreate', message => {
-    if (message.author.bot || !message.content.startsWith(prefix) || message.channel.type === 'dm') return;
+    if (message.author.bot || !message.content.startsWith(prefix) || message.channel.type === 'DM') return;
 
     const messageArray = message.content.split(' ');
     const cmd = messageArray[0];
@@ -67,14 +65,14 @@ client.on('messageCreate', message => {
 
     const commandfile = client.commands.get(cmd.slice(prefix.length).toString().toLowerCase());
 	if (commandfile)
-		commandfile.run(client, JKCJrBot, JKCSupBot, message, args);
+		commandfile.run(client, JKCBot, message, args);
 });
 
 client.login(token);
 
 // mineflayer event section
 const createJKCBot = () => {
-    JKCBot = mineflayer.createBot(minecraftid.JukkyjungJR);
+    JKCBot = mineflayer.createBot(minecraftid.Jukkyjung);
     JKCBot.once('spawn', () => {
         console.log('JKC Jr Bot spawn');
     });
