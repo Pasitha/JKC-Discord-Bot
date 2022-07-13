@@ -1,4 +1,4 @@
-module.exports.run = (bot, args) => {
+module.exports.run = async (bot, args) => {
     if (!args[0]) return JKCJrBot.chat('รบกวนบอกหนูหน่อยนะคะว่าจะโยนให้ใคร');
     if (!Object.keys(JKCJrBot.players).includes(args[0])) return JKCJrBot.chat(`หนูไม่เจอผู้เล่นที่ชื่อ ${args[0]} เลยนะคะ`);
     if (!args[1]) return JKCJrBot.chat(`รบกวนบอกหนูหน่อยนะคะว่าจะโยนให้ ${args[0]} เท่าไหร่`);
