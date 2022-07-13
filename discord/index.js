@@ -24,27 +24,25 @@ setInterval(() => {
     }
 
     for (let i = 0; i < member.length; i++) {
-        if (member[i].allowUpdate) {
-            request.parseURL(`https://www.youtube.com/feeds/videos.xml?channel_id=${member[i].youtube.channelId}`).then((data) => {
+        request.parseURL(`https://www.youtube.com/feeds/videos.xml?channel_id=${member[i].youtube.channelId}`).then((data) => {
 
-                if (!member[i].youtube.lastVideoUpdate.includes(data.items[0].link)) {
-                    let channel = client.channels.cache.get('438885368436359168');
+            if (!member[i].youtube.lastVideoUpdate.includes(data.items[0].link)) {
+                let channel = client.channels.cache.get('438885368436359168');
 
-                    if (channel) {
-                        let persuasion = ['เฮ้ทุกคนคะ !!!', 'ทุกคนนคะหนูจะบอกว่า', 'ง่าาาาาทุกคนนนนน', 'นี้ ๆ ทุกคนตอนนี้'];
-                        channel.send(`${persuasion[Math.floor((Math.random() * (persuasion.length - 1)))]} ช่อง **${data.items[0].author}** มีอัพเดตแล้วไปดูกันเร็ว!!! \n${data.items[0].link}`);
-                    }
-
-                    for (let j = 0; j < 3; j++) {
-                        member[i].youtube.lastVideoUpdate[j] = data.items[j].link;
-                    }
+                if (channel) {
+                    let persuasion = ['เฮ้ทุกคนคะ !!!', 'ทุกคนนคะหนูจะบอกว่า', 'ง่าาาาาทุกคนนนนน', 'นี้ ๆ ทุกคนตอนนี้'];
+                    channel.send(`${persuasion[Math.floor((Math.random() * (persuasion.length - 1)))]} ช่อง **${data.items[0].author}** มีอัพเดตแล้วไปดูกันเร็ว!!! \n${data.items[0].link}`);
                 }
 
-                fs.writeFile('../database/jkc.json', jsonstringify({ member }), (err) => {
-                    if (err) throw err;
-                });
-            }).catch(error => console.log(error));
-        }
+                for (let j = 0; j < 3; j++) {
+                    member[i].youtube.lastVideoUpdate[j] = data.items[j].link;
+                }
+            }
+
+            fs.writeFile('../database/jkc.json', jsonstringify({ member }), (err) => {
+                if (err) throw err;
+            });
+        }).catch(error => console.log(error));
     }
 }, 60000);
 
