@@ -10,21 +10,7 @@
           "https://www.youtube.com/watch?v=DxG93Xzekus",
           "https://www.youtube.com/watch?v=VD8SweuFPdc"
         ]
-      },
-      "allowUpdate": true
-    },
-    {
-      "birthDay": "07/02/1999",
-      "youtube": {
-        "channelName": "BossNiti",
-        "channelId": "UCf5WOYccfrhSVpeJLmc8DoQ",
-        "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=ilwOQINxgTQ",
-          "https://www.youtube.com/watch?v=8RVxKx6ReHg",
-          "https://www.youtube.com/watch?v=DoCqlC3kX40"
-        ]
-      },
-      "allowUpdate": true
+      }
     },
     {
       "birthDay": "03/20/1992",
@@ -36,138 +22,7 @@
           "https://www.youtube.com/watch?v=kOp4fpoYJNM",
           "https://www.youtube.com/watch?v=RQQ4heDvqo8"
         ]
-      },
-      "allowUpdate": true
-    },
-    {
-      "birthDay": "04/15/2000",
-      "youtube": {
-        "channelName": "FreshZ",
-        "channelId": "UCD6F39uqBBM2LfXGb6aD8sQ",
-        "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=k-1TuN7NhwU",
-          "https://www.youtube.com/watch?v=XDPCtOebpm0",
-          "https://www.youtube.com/watch?v=px5NFFk8KN0"
-        ]
-      },
-      "allowUpdate": true
-    },
-    {
-      "birthDay": "02/14/2001",
-      "youtube": {
-        "channelName": "PAZPAT",
-        "channelId": "UCwAbFRVXeZ9EE2-1DVqJmew",
-        "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=F-czU1qxgu4",
-          "https://www.youtube.com/watch?v=liveehtrjv8",
-          "https://www.youtube.com/watch?v=QaOFrFFV_Iw"
-        ]
-      },
-      "allowUpdate": true
-    },
-    {
-      "birthDay": "01/19/2002",
-      "youtube": {
-        "channelName": "ArmCrater",
-        "channelId": "UCxvOQKSiIiwqipcyEJhujTQ",
-        "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=ynhDJmEZZhQ",
-          "https://www.youtube.com/watch?v=nE9BnSmWwHA",
-          "https://www.youtube.com/watch?v=zYX-HaQ6AWQ"
-        ]
-      },
-      "allowUpdate": true
-    },
-    {
-      "birthDay": "03/20/1996",
-      "youtube": {
-        "channelName": "PeeMeenCH",
-        "channelId": "UCTk2mxyDsqRlRn5HzAo4Zzg",
-        "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=Eh-a9-O9y_w",
-          "https://www.youtube.com/watch?v=OOuNzJQDNMM",
-          "https://www.youtube.com/watch?v=TVCvMmpVCvw"
-        ]
-      },
-      "allowUpdate": true
-    },
-    {
-      "birthDay": "06/14/1999",
-      "youtube": {
-        "channelName": "XSOLUTION",
-        "channelId": "UCzuq_sAxRbPcY31yvsAQk0Q",
-        "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=RYR7d_mUL0M",
-          "https://www.youtube.com/watch?v=w7QVyMe5sI8",
-          "https://www.youtube.com/watch?v=lSXtNupUobY"
-        ]
-      },
-      "allowUpdate": true
-    },
-    {
-      "birthDay": "03/20/2004",
-      "youtube": {
-        "channelName": "SiaJi",
-        "channelId": "UCg1PNJ6WqUM10KWrSNyzAjA",
-        "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=VZDdwDaw_nY",
-          "https://www.youtube.com/watch?v=-80wILBwNuY",
-          "https://www.youtube.com/watch?v=8BqGlm71g_w"
-        ]
-      },
-      "allowUpdate": true
-    },
-    {
-      "birthDay": "11/26/2003",
-      "youtube": {
-        "channelName": "GucciGuy",
-        "channelId": "UC1VzAZISuwQ-lwb-oHWhvmQ",
-        "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=_19Lm6Rm9gI",
-          "https://www.youtube.com/watch?v=uS7EIJugN5M",
-          "https://www.youtube.com/watch?v=3dQvs5DsV9I"
-        ]
-      },
-      "allowUpdate": true
-    },
-    {
-      "birthDay": "02/14/2005",
-      "youtube": {
-        "channelName": "RKGz",
-        "channelId": "UCfs20_RtMU90py7DYbbnjPA",
-        "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=vB__WR01Eoo",
-          "https://www.youtube.com/watch?v=M_jg8lAJv_Q",
-          "https://www.youtube.com/watch?v=JMfhwxo_ijU"
-        ]
-      },
-      "allowUpdate": true
-    },
-    {
-      "birthDay": "04/24/2000",
-      "youtube": {
-        "channelName": "SiMonZWolf",
-        "channelId": "UCoZGzmRcvXQt4Mv3LS_49Bg",
-        "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=-eNGVNyR-mQ",
-          "https://www.youtube.com/watch?v=4hnha0sHTQI",
-          "https://www.youtube.com/watch?v=gaIZIfulpjU"
-        ]
-      },
-      "allowUpdate": true
-    },
-    {
-      "birthDay": "09/17/1993",
-      "youtube": {
-        "channelName": "SherlockCs",
-        "channelId": "UCzT0URjXQqYM1XaT3sHbcVA",
-        "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=4WUkwVxJvtQ",
-          "https://www.youtube.com/watch?v=rzdPrpApBAY",
-          "https://www.youtube.com/watch?v=cE1Jp4OHiC0"
-        ]
-      },
-      "allowUpdate": true
+      }
     },
     {
       "birthDay": "10/03/2005",
@@ -179,43 +34,7 @@
           "https://www.youtube.com/watch?v=GzT7nSYKJ2E",
           "https://www.youtube.com/watch?v=WiTP81QnY38"
         ]
-      },
-      "allowUpdate": true
-    },
-    {
-      "birthDay": "09/13/2004",
-      "youtube": {
-        "channelName": "PSYCHOrnz",
-        "channelId": "UC8oaVGY5t28NEv-gwht0wig",
-        "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=OlQcVa5FTKE",
-          "https://www.youtube.com/watch?v=fkOdlkSBiEQ",
-          "https://www.youtube.com/watch?v=Q7Urq5xoBZI"
-        ]
-      },
-      "allowUpdate": true
-    },
-    {
-      "birthDay": "05/16/2005",
-      "youtube": {
-        "channelName": "kinzaza",
-        "channelId": "UCMHGJtaJ2EFHTXB8E-_UX1Q",
-        "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=NHxlk9tDd9w",
-          "https://www.youtube.com/watch?v=Pwhlux6EF2s",
-          "https://www.youtube.com/watch?v=S8-tPtHSlQU"
-        ]
-      },
-      "allowUpdate": true
-    },
-    {
-      "birthDay": "06/04/2002",
-      "youtube": {
-        "channelName": "Hasaki Ch. | ハサキ レイ",
-        "channelId": "UCKTLYtDr2oVIhVKb9KZbt1Q",
-        "lastVideoUpdate": []
-      },
-      "allowUpdate": false
+      }
     },
     {
       "birthDay": "12/04/2003",
@@ -227,33 +46,7 @@
           "https://www.youtube.com/watch?v=PVEVS-whuzw",
           "https://www.youtube.com/watch?v=AMRCknmNNX0"
         ]
-      },
-      "allowUpdate": true
-    },
-    {
-      "birthDay": "11/09/2005",
-      "youtube": {
-        "channelName": "Pooh37",
-        "channelId": "UCe_dyRiP9XVRxPjWNBBiQBw",
-        "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=H0Cs6LXYjnY",
-          "https://www.youtube.com/watch?v=KNSmgH9mGMQ"
-        ]
-      },
-      "allowUpdate": true
-    },
-    {
-      "birthDay": "10/06/2003",
-      "youtube": {
-        "channelName": "ItsSakata_",
-        "channelId": "UCOA81B6mrIGq-iABJrXqd7w",
-        "lastVideoUpdate": [
-          "https://www.youtube.com/watch?v=oyVhhpfwMmQ",
-          "https://www.youtube.com/watch?v=R3WYRcVpj9o",
-          "https://www.youtube.com/watch?v=gPcT2YiE27c"
-        ]
-      },
-      "allowUpdate": true
+      }
     }
   ]
 }
