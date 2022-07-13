@@ -25,7 +25,7 @@ fs.readdir('discord-commands/', (err, files) => {
     }
     
     jsfiles.forEach((f, i) => {
-        const modules = require(`./commands/${f}`);
+        const modules = require(`./discord-commands/${f}`);
         
         modules.name.forEach(commandName => {
             client.commands.set(commandName, modules);
