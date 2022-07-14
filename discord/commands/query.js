@@ -22,7 +22,7 @@ module.exports.run = async (client, message, args) => {
     let embed2 = new MessageEmbed().setColor("#FFD157").setThumbnail(client.user.displayAvatarURL())
         .setTitle('👱🏻คำสั่งของ JKC Discord Bot (หนูนี้เองง) มีอะไรบ้าง ?').setDescription('ใน Github มีคำสั่งทิ้งหมดของหนูเขียนเอาไว้ให้แล้วค่าาา อ่านในนั้นรู้ทั้ง Code และ คำสั่งเลยนะคะ😅')
         .setFooter({
-            text: client.user.username + " | Version " + version, client.user.displayAvatarURL()
+            text: client.user.username + " | Version " + version//, client.user.displayAvatarURL()
         });
 
     const rowhome = new MessageActionRow()
