@@ -31,7 +31,7 @@ setInterval(() => {
 
                 if (channel) {
                     let persuasion = ['เฮ้ทุกคนคะ !!!', 'ทุกคนนคะหนูจะบอกว่า', 'ง่าาาาาทุกคนนนนน', 'นี้ ๆ ทุกคนตอนนี้'];
-                    channel.send(`${persuasion[Math.floor((Math.random() * (persuasion.length - 1)))]} ช่อง **${data.items[0].author}** มีอัพเดตแล้วไปดูกันเร็ว!!! \n${data.items[0].link}`);
+                    channel.send(`${persuasion[Math.floor((Math.random() * (persuasion.length - 1)))]} ช่อง **${data.items[0].author}** มีอัพเดตแล้วไปดูกันเร็ว!!! \n${data.items[0].link}\n <@&987317456332791878>`);
                 }
 
                 for (let j = 0; j < 3; j++) {
