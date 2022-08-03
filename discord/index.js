@@ -23,7 +23,8 @@ setInterval(() => {
         return;
     }
 
-    for (let i = 0; i < member.length; i++) {
+    let memberLength = member.length;
+    for (let i = 0; i < memberLength; i++) {
         request.parseURL(`https://www.youtube.com/feeds/videos.xml?channel_id=${member[i].youtube.channelId}`).then((data) => {
 
             if (!member[i].youtube.lastVideoUpdate.includes(data.items[0].link)) {
